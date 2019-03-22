@@ -1,0 +1,29 @@
+{
+  "name": "cai",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0"
+  },
+  "description": " A computer Assited Instruction for teaching computer students at the secondary level",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phawazzzy/CAI.git"
+  },
+  "author": "phawazzzy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phawazzzy/CAI/issues"
+  },
+  "homepage": "https://github.com/phawazzzy/CAI#readme"
+}
