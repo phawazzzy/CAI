@@ -1,3 +1,5 @@
+// var user = require("../models/user")
+
 exports.homepage = (req, res) => {
     res.render("index", {})
 };

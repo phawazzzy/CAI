@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 let controller = require("../controllers/frontend");
-
+// let user = require("../models/user")
 
 /* GET home page. */
 router.get('/', controller.homepage);
