@@ -6,6 +6,9 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 var session = require('express-session');
 var passport = require('passport');
+const MongoStore = require("connect-mongodb-session")(session);
+const flash = require('express-flash');
+
 
 
 var db_uri = 'mongodb://localhost:27017/CAI'
@@ -13,6 +16,7 @@ mongoose.connect(db_uri, { useNewUrlParser: true, useCreateIndex: true }).then(c
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+require("./config/passport");
 
 var app = express();
 
@@ -29,8 +33,12 @@ app.use(session({
     secret: "mysecrect",
     resave: false,
     saveUninitialized: false,
-    // store: new MongoStore({ uri: db_uri, collection: "app_sessions" })
+    store: new MongoStore({ uri: db_uri, collection: "app_sessions" })
 }));
+
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

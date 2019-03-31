@@ -1,6 +1,6 @@
 let mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
-let Schema = mongoose.Scheme;
+let Schema = mongoose.Schema;
 
 let userSchema = new Schema({
     name: {
@@ -23,5 +23,13 @@ let userSchema = new Schema({
         default: Date.now
     }
 })
+
+userSchema.methods.hashPassword = function(password) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(10), null)
+};
+
+userSchema.methods.validatePassword = function(password) {
+    return bcrypt.compareSync(password, this.password);
+}
 
 module.exports = mongoose.model('user', userSchema);
