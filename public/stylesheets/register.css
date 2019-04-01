@@ -188,9 +188,9 @@ h1 {
     margin-left: auto;
     padding-bottom: 4px;
 }
-
+/* 
 .w-form-done {
-    display: none;
+    display: block;
     padding: 20px;
     text-align: center;
     background-color: #dddddd;
@@ -201,7 +201,7 @@ h1 {
     margin-top: 10px;
     padding: 10px;
     background-color: #ffdede;
-}
+} */
 
 button,
 input,

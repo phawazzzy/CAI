@@ -1,14 +1,20 @@
+var user = require('../models/user');
+
+
+
 exports.homepage = (req, res) => {
     res.render("index", {})
 };
 
 exports.login = (req, res) => {
-    res.render("login", {})
+    let loginError = req.flash('loginError');
+    let passwordError = req.flash('passwordError')
+    res.render("login", { loginError, passwordError })
 };
 
 exports.register = (req, res) => {
-    // res.send("i am register and i am working")
-    res.render("register", {})
+    let existence = req.flash('userExist')
+    res.render("register", { existence })
 
 }
 exports.about = (req, res) => {

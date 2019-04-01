@@ -5,11 +5,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>courses</title>
+    <title>courses || CAI</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
+    <%- include('partials/head') %>
+
 </head>
 
 <body>
 
+    <style>
+        body {
+            background-image: url('../image/bg.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+    <div class="hero-content">
+
+        <%- include('partials/header') %>
+
+            <br> <br> <br> <br> <br> <br>
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-3">TOPICS</h1>
+                    <p class="lead">Explore and pick out of topics</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../images/6.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">topic title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">read more on topic</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../images/5.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">topic title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">read more on topic</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../images/6.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">topic title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">read more on topic</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="/logout">logout</a>
 </body>
 
 </html>

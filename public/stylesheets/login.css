@@ -3,11 +3,11 @@
             -moz-box-sizing: border-box;
             box-sizing: border-box;
         }
-
+        
         body {
             margin: 0;
         }
-
+        
         body {
             margin: 0;
             min-height: 100%;
@@ -17,7 +17,7 @@
             line-height: 20px;
             color: #333;
         }
-
+        
         .body {
             display: block;
             margin: 50px auto auto;
@@ -34,50 +34,50 @@
             background-position: 0px 0px;
             background-size: 125px;
         }
-
+        
         html {
             font-family: sans-serif;
             -ms-text-size-adjust: 100%;
             -webkit-text-size-adjust: 100%;
         }
-
+        
         html {
             height: 100%;
         }
-
+        
         .w-container {
             margin-left: auto;
             margin-right: auto;
             max-width: 940px;
         }
-
+        
         .container {
             border-radius: 0px;
         }
-
+        
         a {
             background-color: transparent;
         }
-
+        
         img {
             border: 0;
         }
-
+        
         img {
             max-width: 100%;
             vertical-align: middle;
             display: inline-block;
         }
-
+        
         .div-block-17 {
             border-radius: 7px;
         }
-
+        
         .w-container .w-row {
             margin-left: -10px;
             margin-right: -10px;
         }
-
+        
         .w-col {
             position: relative;
             float: left;
@@ -86,27 +86,26 @@
             padding-left: 10px;
             padding-right: 10px;
         }
-
+        
         .w-col-6 {
             width: 50%;
         }
-
+        
         .column {
             border-right: 1px none #000;
             border-radius: 12px 0px 0px 12px;
             background-color: white;
             height: 542px;
         }
-
+        
         .column-overlay {
             background: rgba(21, 20, 33, .5);
             height: 100%;
             width: 480px;
             border-radius: 0px 13px 13px 0px;
-
             margin-left: -9px;
         }
-
+        
         .column-2 {
             height: 542px;
             border-radius: 0px 13px 13px 0px;
@@ -115,7 +114,7 @@
             background-position: 0px 0px;
             background-size: cover;
         }
-
+        
         .div-block-12 {
             display: -webkit-box;
             display: -webkit-flex;
@@ -150,12 +149,12 @@
             grid-template-rows: auto auto;
             background-color: transparent;
         }
-
+        
         h1 {
             font-size: 2em;
             margin: .67em 0;
         }
-
+        
         h1,
         h2,
         h3,
@@ -165,13 +164,13 @@
             font-weight: bold;
             margin-bottom: 10px;
         }
-
+        
         h1 {
             font-size: 38px;
             line-height: 44px;
             margin-top: 20px;
         }
-
+        
         .heading {
             -webkit-align-self: center;
             -ms-flex-item-align: center;
@@ -184,12 +183,12 @@
             color: #f1eaea;
             text-align: center;
         }
-
+        
         p {
             margin-top: 0px;
             margin-bottom: 10px;
         }
-
+        
         .paragraph {
             width: 250px;
             margin-top: 15px;
@@ -210,11 +209,11 @@
             color: #fff;
             text-align: center;
         }
-
+        
         input {
             line-height: normal;
         }
-
+        
         .w-button {
             display: inline-block;
             padding: 9px 15px;
@@ -226,7 +225,7 @@
             cursor: pointer;
             border-radius: 0;
         }
-
+        
         .button {
             width: 150px;
             margin-top: 22px;
@@ -242,16 +241,16 @@
             background-color: transparent;
             text-align: center;
         }
-
+        
         b,
         strong {
             font-weight: bold;
         }
-
+        
         .bold-text-4 {
             color: #fff;
         }
-
+        
         .div-block-13 {
             display: block;
             overflow: auto;
@@ -280,7 +279,7 @@
             letter-spacing: 2px;
             text-transform: uppercase;
         }
-
+        
         .div-block-15 {
             display: -webkit-box;
             display: -webkit-flex;
@@ -292,13 +291,13 @@
             -ms-flex-direction: column;
             flex-direction: column;
         }
-
+        
         .heading-2 {
             margin-top: 40px;
             color: hsla(249, 86%, 17%, 1);
             text-align: center;
         }
-
+        
         .div-block-14 {
             display: -webkit-box;
             display: -webkit-flex;
@@ -311,41 +310,41 @@
             justify-content: center;
             text-align: center;
         }
-
+        
         .text-block-6 {
             margin-top: 28px;
             text-align: center;
         }
-
+        
         .w-form {
             margin: 0 0 15px;
         }
-
+        
         .form-block {
             margin-top: 25px;
         }
-
+        
         .form {
             width: 400px;
             margin-right: auto;
             margin-left: auto;
             padding-bottom: 4px;
         }
-
+        
         .w-form-done {
             display: none;
             padding: 20px;
             text-align: center;
             background-color: #dddddd;
         }
-
+        
         .w-form-fail {
             display: none;
             margin-top: 10px;
             padding: 10px;
             background-color: #ffdede;
         }
-
+        
         button,
         input,
         optgroup,
@@ -355,7 +354,7 @@
             font: inherit;
             margin: 0;
         }
-
+        
         .w-input,
         .w-select {
             display: block;
@@ -370,23 +369,23 @@
             background-color: #ffffff;
             border: 1px solid #cccccc;
         }
-
+        
         .text-field-2 {
             margin-bottom: 15px;
             border-radius: 5px;
         }
-
+        
         .text-field-3 {
             border-radius: 5px;
         }
-
+        
         .link-3 {
             display: block;
             margin-top: 27px;
             margin-bottom: 0px;
             text-align: center;
         }
-
+        
         .submit-button {
             width: 150px;
             margin-top: 25px;
@@ -401,11 +400,11 @@
             text-align: center;
             text-transform: none;
         }
-
+        
         input.w-button {
             -webkit-appearance: button;
         }
-
+        
         .div-block-16 {
             width: 50px;
             height: 50px;
@@ -415,7 +414,7 @@
             border-color: #b5b0b0;
             border-radius: 50%;
         }
-
+        
         .image {
             margin-top: -1px;
             margin-left: 11px;
