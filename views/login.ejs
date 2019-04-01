@@ -5,6 +5,9 @@
     <link rel="stylesheet" href="../stylesheets/login.css">
     <title>Sign In</title>
 
+    <%- include( 'partials/head') %>
+
+
 </head>
 
 <body class="body">
@@ -26,20 +29,29 @@
                         </div>
                         <div class="text-block-6">Create an account with your Email</div>
                         <div class="form-block w-form">
-                            <!-- <form action="/login/student" name="wf-form-Login-Form" class="form w-clearfix" id="wf-form-Login-Form" method="POST">
-                                <input name="email" class="text-field-2 w-input" id="email" required="" type="email" maxlength="256" placeholder="Email" data-name="Email">
-                                <input name="Password" class="text-field-3 w-input" id="Password" required="" type="password" maxlength="256" placeholder="Password" data-name="Password">
-                                <a class="link-3" href="#">Forgot your password?</a>
-                                <input class="submit-button w-button" type="submit" value="SIGN IN">
-                            </form> -->
+
                             <span><%= loginError%></span>
                             <span><%= passwordError%></span>
 
 
                             <form action="/login/student" method="POST">
-                                <input id="first-name" class="input100" type="text" name="email" placeholder="Email">
+                                <!-- <input id="first-name" class="input100" type="text" name="email" placeholder="Email">
                                 <input id="first-name" class="input100" type="text" name="password" placeholder="password">
-                                <input type="submit" value="submission">
+                                <input type="submit" value="submission"> -->
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                </div>
+                                <!-- <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                </div> -->
+                                <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
                             <div class="w-form-done">
                                 <div>Thank you! Your submission has been received!</div>
