@@ -30,7 +30,7 @@
             -ms-grid-rows: auto 16px auto;
             grid-template-rows: auto auto;
             background-color: #dedde9;
-            background-image: url("images/symphony.png");
+            background-image: url("../images/symphony.png");
             background-position: 0px 0px;
             background-size: 125px;
         }
@@ -111,7 +111,7 @@
             height: 542px;
             border-radius: 0px 13px 13px 0px;
             background-color: hsla(249, 77%, 38%, 1);
-            background-image: url("images/kisspng-reading-book-writing-test-student-5a6c1602a52d78.7200107315170329626766.png");
+            background-image: url("../images/kisspng-reading-book-writing-test-student-5a6c1602a52d78.7200107315170329626766.png");
             background-position: 0px 0px;
             background-size: cover;
         }
