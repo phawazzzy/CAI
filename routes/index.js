@@ -11,10 +11,14 @@ var user = require('../models/user');
 router.get('/', controller.homepage);
 router.get('/login', controller.login);
 router.get('/register', controller.register);
+router.get('/admin_register', cms_controller.admin_register);
+router.get('/admin_login', cms_controller.admin_login)
 router.get('/about', controller.about);
 router.get('/courses', isLoggedIn, controller.courses);
 router.get('/topic', controller.topic)
 router.get('/add_topic', cms_controller.add_topic)
+
+
 
 
 router.post('/register/students', passport.authenticate('local.signup', {
