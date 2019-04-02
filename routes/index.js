@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 let passport = require('passport')
 let controller = require("../controllers/frontend");
+let cms_controller = require("../controllers/cms");
+
 var user = require('../models/user');
 
 
@@ -11,6 +13,9 @@ router.get('/login', controller.login);
 router.get('/register', controller.register);
 router.get('/about', controller.about);
 router.get('/courses', isLoggedIn, controller.courses);
+router.get('/topic', controller.topic)
+router.get('/add_topic', cms_controller.add_topic)
+
 
 router.post('/register/students', passport.authenticate('local.signup', {
     successRedirect: "/courses",

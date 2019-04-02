@@ -6,9 +6,10 @@ let courseSchema = new Schema({
     topic_title: {
         type: String,
     },
+    author: { type: String },
+
     image: { type: String },
     content: { type: String },
-    author: { type: String },
     createdDate: {
         type: Date,
         default: Date.now()
@@ -16,3 +17,5 @@ let courseSchema = new Schema({
 
 
 });
+
+module.exports = mongoose.model('courses', courseSchema);
