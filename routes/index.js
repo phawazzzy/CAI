@@ -10,7 +10,7 @@ router.get('/', controller.homepage);
 router.get('/login', controller.login);
 router.get('/register', controller.register);
 router.get('/about', controller.about);
-router.get('/courses', isLoggedIn, controller.courses);
+router.get('/courses', controller.courses);
 
 router.post('/register/students', passport.authenticate('local.signup', {
     successRedirect: "/courses",

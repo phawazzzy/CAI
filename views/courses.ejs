@@ -1,73 +1,303 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class=" w-mod-js" data-wf-status="1" data-wf-site="5ca1762ab7e3ed999e21008c"
+    data-wf-page="5ca1762ab7e3edabd021008d" data-wf-domain="courses-page.webflow.io">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>courses || CAI</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
-    <%- include('partials/head') %>
-
+    <title>Courses</title>
+    <link rel="stylesheet" href="../stylesheets/courses.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 
-<body>
-
-    <style>
-        body {
-            background-image: url('../image/bg.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    </style>
-    <div class="hero-content">
-
-        <%- include('partials/header') %>
-
-            <br> <br> <br> <br> <br> <br>
-            <div class="jumbotron jumbotron-fluid">
-                <div class="container">
-                    <h1 class="display-3">TOPICS</h1>
-                    <p class="lead">Explore and pick out of topics</p>
+<body class="body">
+    <div class="navbar w-nav" data-collapse="medium" data-animation="default" data-duration="400">
+        <div class="div-block-14"><a class="w-nav-brand" href="#"><img width="62" class="image-3" alt=""
+                    src="https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca2ad8a40d2285e4df95415_molecule.png"></a><a
+                class="w-nav-link" href="#"><span class="text-span-2">Home</span></a>
+            <nav class="nav-menu w-nav-menu" role="navigation">
+                <form class="search w-form" action="/search"><input name="query" class="search-input w-input"
+                        id="search" required="" type="search" maxlength="256" placeholder="Search Courses...">
+                        <button
+                        class="w-button" type="submit"> <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                <div class="div-block-8">
+                    <i class="far fa-bell nav-icon"></i>
                 </div>
+                <div class="div-block-8"><img alt=""
+                        src="https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca2aeb75d56d6bd61640fdd_man.png">
+                </div>
+            </nav>
+            <div class="w-nav-button">
+                <div class="w-icon-nav-menu"></div>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm">
-                        <div class="card" style="width: 18rem;">
-                            <img src="../images/6.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">topic title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">read more on topic</a>
+        </div>
+        <div class="w-nav-overlay" data-wf-ignore=""></div>
+    </div>
+    <div>
+        <div class="text-block-4">CAI Online courses</div>
+        <p class="paragraph-3">Choose from hundreds of online courses from top universities and specialist
+            organisations.</p>
+    </div>
+    <div class="div-block-5">
+        <div class="div-block-6"><a class="button-2 w-button" href="#">All Courses</a></div>
+        <div class="div-block-6"><a class="button-2 w-button" href="#">Popular Courses</a></div>
+        <div class="div-block-6"><a class="button-2 w-button" href="#">New Courses</a></div>
+    </div>
+    <div class="div-block-13">
+        <div>Explore 365 courses </div>
+        <div class="grid-container">
+                <div class="grid-item">
+                    <div class="div-block-4">
+                        <div class="div-block-2"><img class="image-2" alt=""
+                                src="https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920.jpg"
+                                srcset="https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-500.jpeg 500w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-800.jpeg 800w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-1080.jpeg 1080w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-1600.jpeg 1600w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920.jpg 1920w"
+                                sizes="275px"></div>
+                        <div class="div-block">
+                            <div class="div-block-3">
+                                <p class="paragraph-2">Learn Mathematics</p>
+                                <p class="paragraph">An Introduction to Recreational Math: Fun, Games and Puzzles</p>
+                                <p>Explore and enjoy 'recreational'math while boosting your creeative and deductive thinking
+                                    skills.</p>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="card" style="width: 18rem;">
-                            <img src="../images/5.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">topic title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">read more on topic</a>
+                            <div>
+                                <div class="w-layout-grid grid">
+                                    <div class="text-block" id="w-node-c6aef548e880-d021008d">3 Weeks.</div>
+                                    <div class="text-block-2" id="w-node-c6aef548e882-d021008d">2 Hours per week</div>
+                                    <div id="w-node-c6aef548e884-d021008d"> </div>
+                                    <div class="text-block-3" id="w-node-c6aef548e886-d021008d">Free Certificate upon
+                                        completion.</div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="card" style="width: 18rem;">
-                            <img src="../images/6.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">topic title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">read more on topic</a>
-                            </div>
+                            <div><a class="button w-button" href="#"><strong>Start Course</strong></a></div>
                         </div>
                     </div>
                 </div>
+                <div class="grid-item">
+                    <div class="div-block-4">
+                        <div class="div-block-2"><img class="image-2" alt=""
+                                src="https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920.jpg"
+                                srcset="https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-500.jpeg 500w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-800.jpeg 800w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-1080.jpeg 1080w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-1600.jpeg 1600w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920.jpg 1920w"
+                                sizes="275px"></div>
+                        <div class="div-block">
+                            <div class="div-block-3">
+                                <p class="paragraph-2">Learn Mathematics</p>
+                                <p class="paragraph">An Introduction to Recreational Math: Fun, Games and Puzzles</p>
+                                <p>Explore and enjoy 'recreational'math while boosting your creeative and deductive thinking
+                                    skills.</p>
+                            </div>
+                            <div>
+                                <div class="w-layout-grid grid">
+                                    <div class="text-block" id="w-node-c6aef548e880-d021008d">3 Weeks.</div>
+                                    <div class="text-block-2" id="w-node-c6aef548e882-d021008d">2 Hours per week</div>
+                                    <div id="w-node-c6aef548e884-d021008d"> </div>
+                                    <div class="text-block-3" id="w-node-c6aef548e886-d021008d">Free Certificate upon
+                                        completion.</div>
+                                </div>
+                            </div>
+                            <div><a class="button w-button" href="#"><strong>Start Course</strong></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="div-block-4">
+                        <div class="div-block-2"><img class="image-2" alt=""
+                                src="https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920.jpg"
+                                srcset="https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-500.jpeg 500w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-800.jpeg 800w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-1080.jpeg 1080w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-1600.jpeg 1600w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920.jpg 1920w"
+                                sizes="275px"></div>
+                        <div class="div-block">
+                            <div class="div-block-3">
+                                <p class="paragraph-2">Learn Mathematics</p>
+                                <p class="paragraph">An Introduction to Recreational Math: Fun, Games and Puzzles</p>
+                                <p>Explore and enjoy 'recreational'math while boosting your creeative and deductive thinking
+                                    skills.</p>
+                            </div>
+                            <div>
+                                <div class="w-layout-grid grid">
+                                    <div class="text-block" id="w-node-c6aef548e880-d021008d">3 Weeks.</div>
+                                    <div class="text-block-2" id="w-node-c6aef548e882-d021008d">2 Hours per week</div>
+                                    <div id="w-node-c6aef548e884-d021008d"> </div>
+                                    <div class="text-block-3" id="w-node-c6aef548e886-d021008d">Free Certificate upon
+                                        completion.</div>
+                                </div>
+                            </div>
+                            <div><a class="button w-button" href="#"><strong>Start Course</strong></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="div-block-4">
+                        <div class="div-block-2"><img class="image-2" alt=""
+                                src="https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920.jpg"
+                                srcset="https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-500.jpeg 500w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-800.jpeg 800w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-1080.jpeg 1080w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-1600.jpeg 1600w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920.jpg 1920w"
+                                sizes="275px"></div>
+                        <div class="div-block">
+                            <div class="div-block-3">
+                                <p class="paragraph-2">Learn Mathematics</p>
+                                <p class="paragraph">An Introduction to Recreational Math: Fun, Games and Puzzles</p>
+                                <p>Explore and enjoy 'recreational'math while boosting your creeative and deductive thinking
+                                    skills.</p>
+                            </div>
+                            <div>
+                                <div class="w-layout-grid grid">
+                                    <div class="text-block" id="w-node-c6aef548e880-d021008d">3 Weeks.</div>
+                                    <div class="text-block-2" id="w-node-c6aef548e882-d021008d">2 Hours per week</div>
+                                    <div id="w-node-c6aef548e884-d021008d"> </div>
+                                    <div class="text-block-3" id="w-node-c6aef548e886-d021008d">Free Certificate upon
+                                        completion.</div>
+                                </div>
+                            </div>
+                            <div><a class="button w-button" href="#"><strong>Start Course</strong></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                        <div class="div-block-4">
+                            <div class="div-block-2"><img class="image-2" alt=""
+                                    src="https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920.jpg"
+                                    srcset="https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-500.jpeg 500w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-800.jpeg 800w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-1080.jpeg 1080w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-1600.jpeg 1600w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920.jpg 1920w"
+                                    sizes="275px"></div>
+                            <div class="div-block">
+                                <div class="div-block-3">
+                                    <p class="paragraph-2">Learn Mathematics</p>
+                                    <p class="paragraph">An Introduction to Recreational Math: Fun, Games and Puzzles</p>
+                                    <p>Explore and enjoy 'recreational'math while boosting your creeative and deductive thinking
+                                        skills.</p>
+                                </div>
+                                <div>
+                                    <div class="w-layout-grid grid">
+                                        <div class="text-block" id="w-node-c6aef548e880-d021008d">3 Weeks.</div>
+                                        <div class="text-block-2" id="w-node-c6aef548e882-d021008d">2 Hours per week</div>
+                                        <div id="w-node-c6aef548e884-d021008d"> </div>
+                                        <div class="text-block-3" id="w-node-c6aef548e886-d021008d">Free Certificate upon
+                                            completion.</div>
+                                    </div>
+                                </div>
+                                <div><a class="button w-button" href="#"><strong>Start Course</strong></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                            <div class="div-block-4">
+                                <div class="div-block-2"><img class="image-2" alt=""
+                                        src="https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920.jpg"
+                                        srcset="https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-500.jpeg 500w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-800.jpeg 800w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-1080.jpeg 1080w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-1600.jpeg 1600w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920.jpg 1920w"
+                                        sizes="275px"></div>
+                                <div class="div-block">
+                                    <div class="div-block-3">
+                                        <p class="paragraph-2">Learn Mathematics</p>
+                                        <p class="paragraph">An Introduction to Recreational Math: Fun, Games and Puzzles</p>
+                                        <p>Explore and enjoy 'recreational'math while boosting your creeative and deductive thinking
+                                            skills.</p>
+                                    </div>
+                                    <div>
+                                        <div class="w-layout-grid grid">
+                                            <div class="text-block" id="w-node-c6aef548e880-d021008d">3 Weeks.</div>
+                                            <div class="text-block-2" id="w-node-c6aef548e882-d021008d">2 Hours per week</div>
+                                            <div id="w-node-c6aef548e884-d021008d"> </div>
+                                            <div class="text-block-3" id="w-node-c6aef548e886-d021008d">Free Certificate upon
+                                                completion.</div>
+                                        </div>
+                                    </div>
+                                    <div><a class="button w-button" href="#"><strong>Start Course</strong></a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                                <div class="div-block-4">
+                                    <div class="div-block-2"><img class="image-2" alt=""
+                                            src="https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920.jpg"
+                                            srcset="https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-500.jpeg 500w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-800.jpeg 800w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-1080.jpeg 1080w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-1600.jpeg 1600w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920.jpg 1920w"
+                                            sizes="275px"></div>
+                                    <div class="div-block">
+                                        <div class="div-block-3">
+                                            <p class="paragraph-2">Learn Mathematics</p>
+                                            <p class="paragraph">An Introduction to Recreational Math: Fun, Games and Puzzles</p>
+                                            <p>Explore and enjoy 'recreational'math while boosting your creeative and deductive thinking
+                                                skills.</p>
+                                        </div>
+                                        <div>
+                                            <div class="w-layout-grid grid">
+                                                <div class="text-block" id="w-node-c6aef548e880-d021008d">3 Weeks.</div>
+                                                <div class="text-block-2" id="w-node-c6aef548e882-d021008d">2 Hours per week</div>
+                                                <div id="w-node-c6aef548e884-d021008d"> </div>
+                                                <div class="text-block-3" id="w-node-c6aef548e886-d021008d">Free Certificate upon
+                                                    completion.</div>
+                                            </div>
+                                        </div>
+                                        <div><a class="button w-button" href="#"><strong>Start Course</strong></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-item">
+                                    <div class="div-block-4">
+                                        <div class="div-block-2"><img class="image-2" alt=""
+                                                src="https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920.jpg"
+                                                srcset="https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-500.jpeg 500w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-800.jpeg 800w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-1080.jpeg 1080w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-1600.jpeg 1600w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920.jpg 1920w"
+                                                sizes="275px"></div>
+                                        <div class="div-block">
+                                            <div class="div-block-3">
+                                                <p class="paragraph-2">Learn Mathematics</p>
+                                                <p class="paragraph">An Introduction to Recreational Math: Fun, Games and Puzzles</p>
+                                                <p>Explore and enjoy 'recreational'math while boosting your creeative and deductive thinking
+                                                    skills.</p>
+                                            </div>
+                                            <div>
+                                                <div class="w-layout-grid grid">
+                                                    <div class="text-block" id="w-node-c6aef548e880-d021008d">3 Weeks.</div>
+                                                    <div class="text-block-2" id="w-node-c6aef548e882-d021008d">2 Hours per week</div>
+                                                    <div id="w-node-c6aef548e884-d021008d"> </div>
+                                                    <div class="text-block-3" id="w-node-c6aef548e886-d021008d">Free Certificate upon
+                                                        completion.</div>
+                                                </div>
+                                            </div>
+                                            <div><a class="button w-button" href="#"><strong>Start Course</strong></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grid-item">
+                                        <div class="div-block-4">
+                                            <div class="div-block-2"><img class="image-2" alt=""
+                                                    src="https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920.jpg"
+                                                    srcset="https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-500.jpeg 500w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-800.jpeg 800w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-1080.jpeg 1080w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920-p-1600.jpeg 1600w, https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca17cefb7e3edd122211314_pavers-3549293_1920.jpg 1920w"
+                                                    sizes="275px"></div>
+                                            <div class="div-block">
+                                                <div class="div-block-3">
+                                                    <p class="paragraph-2">Learn Mathematics</p>
+                                                    <p class="paragraph">An Introduction to Recreational Math: Fun, Games and Puzzles</p>
+                                                    <p>Explore and enjoy 'recreational'math while boosting your creeative and deductive thinking
+                                                        skills.</p>
+                                                </div>
+                                                <div>
+                                                    <div class="w-layout-grid grid">
+                                                        <div class="text-block" id="w-node-c6aef548e880-d021008d">3 Weeks.</div>
+                                                        <div class="text-block-2" id="w-node-c6aef548e882-d021008d">2 Hours per week</div>
+                                                        <div id="w-node-c6aef548e884-d021008d"> </div>
+                                                        <div class="text-block-3" id="w-node-c6aef548e886-d021008d">Free Certificate upon
+                                                            completion.</div>
+                                                    </div>
+                                                </div>
+                                                <div><a class="button w-button" href="#"><strong>Start Course</strong></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
             </div>
+    
+    </div>
+    <div class="section">
+        <div>
+            <div>© copyright 2019 CAI</div>
+        </div>
+        <div class="div-block-10">
+            <div>About us</div>
+        </div>
+        <div class="div-block-11">
+            <div>Contact us</div>
+        </div>
+        <div class="div-block-12">
+            <div>Privacy</div>
+        </div>
+    </div>
 
-            <a href="/logout">logout</a>
 </body>
 
 </html>
