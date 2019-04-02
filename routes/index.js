@@ -12,12 +12,12 @@ router.get('/', controller.homepage);
 router.get('/login', controller.login);
 router.get('/register', controller.register);
 router.get('/admin_register', cms_controller.admin_register);
-router.get('/admin_login', cms_controller.admin_login)
+router.get('/admin_login', cms_controller.admin_login);
 router.get('/about', controller.about);
 router.get('/courses', isLoggedIn, controller.courses);
-router.get('/topic', controller.topic)
-router.get('/add_topic', cms_controller.add_topic)
-
+router.get('/topic', controller.topic);
+router.get('/add_topic', cms_controller.add_topic);
+router.get("/dashboard", adminLoggedIn, cms_controller.dashboard);
 
 
 
@@ -33,6 +33,18 @@ router.post('/login/student', passport.authenticate('local.login', {
     failueFlash: true
 }));
 
+router.post('/register/admin', passport.authenticate('local.adminSignup', {
+    successRedirect: "/dashboard",
+    failureRedirect: "/admin_register",
+    failueFlash: true
+}));
+
+router.post('/login/admin', passport.authenticate('local.adminLogin', {
+    successRedirect: "/dashboard",
+    failureRedirect: "/admin_login",
+    failueFlash: true
+}));
+
 
 
 function isLoggedIn(req, res, next) {
@@ -43,10 +55,26 @@ function isLoggedIn(req, res, next) {
     res.redirect("/login");
 }
 
+function adminLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next()
+    }
+
+    res.redirect("/admin_login");
+}
+
+
 router.get("/logout", function(req, res) {
     req.logout()
     res.redirect("/")
 })
+
+router.get("/adminLogout", function(req, res) {
+    req.logout()
+    res.redirect("/admin_login");
+})
+
+
 
 
 

@@ -18,6 +18,10 @@ let userSchema = new Schema({
         required: true,
     },
 
+    role: {
+        type: String
+    },
+
     createdDate: {
         type: Date,
         default: Date.now
