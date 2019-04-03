@@ -14,12 +14,16 @@ router.get('/register', controller.register);
 router.get('/admin_register', cms_controller.admin_register);
 router.get('/admin_login', cms_controller.admin_login);
 router.get('/about', controller.about);
+<<<<<<< HEAD
 router.get('/courses', isLoggedIn, controller.courses);
 router.get('/topic', controller.topic);
 router.get('/add_topic', cms_controller.add_topic);
 router.get("/dashboard", adminLoggedIn, cms_controller.dashboard);
 
 
+=======
+router.get('/courses', controller.courses);
+>>>>>>> Robogiek
 
 router.post('/register/students', passport.authenticate('local.signup', {
     successRedirect: "/courses",
