@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html class="w-mod-js wf-inconsolata-n4-active wf-inconsolata-n7-active wf-active" data-wf-status="1" data-wf-site="5c961db7e450bb0ce0794728" data-wf-page="5c961db7e450bb6470794729" data-wf-domain="azeezs-first-project-74b0b6.webflow.io">
+<html class="w-mod-js wf-inconsolata-n4-active wf-inconsolata-n7-active wf-active" data-wf-status="1"
+    data-wf-site="5c961db7e450bb0ce0794728" data-wf-page="5c961db7e450bb6470794729"
+    data-wf-domain="azeezs-first-project-74b0b6.webflow.io">
 
 <head>
-    <link rel="stylesheet" href="../stylesheets/register.css">
+    <link rel="stylesheet" href="stylesheets/register.css">
     <title>Register</title>
-
-    <%- include( 'partials/head') %>
-
 </head>
 
 <body class="body">
@@ -14,67 +13,50 @@
         <div class="div-block-17">
             <div class="columns w-row">
                 <div class="column w-col w-col-6">
-                    <div class="column-overlay">
-                        <div class="div-block-13"><img width="30" class="image" alt="" src="images/molecule.png">
-                        </div>
-                        <div class="div-block-12">
-                            <h1 class="heading"><strong class="bold-text-4">Welcome!</strong></h1>
-                            <p class="paragraph">To continue to your dashboard please login with your personal details</p><a class="button w-button" href="/login">SIGN&nbsp;IN</a>
-                        </div>
-                    </div>
+                   <div class="column-overlay">
+                    <div class="div-block-13"><img width="30" class="image" alt=""
+                        src="images/molecule.png">
+                </div>
+                <div class="div-block-12">
+                    <h1 class="heading"><strong class="bold-text-4">Welcome!</strong></h1>
+                    <p class="paragraph">To continue to your dashboard please login with your personal details</p><a
+                        class="button w-button" href="#">SIGN&nbsp;IN</a>
+                </div>
+                   </div>
                 </div>
                 <div class="column-2 w-col w-col-6">
                     <div class="div-block-15">
                         <h1 class="heading-2">Create Account</h1>
                         <div class="div-block-14">
-                            <div class="div-block-16"><img alt="" src="images/google-plus.png">
+                            <div class="div-block-16"><img alt=""
+                                    src="images/google-plus.png">
                             </div>
-                            <div class="div-block-16"><img alt="" src="images/linkedin.png">
+                            <div class="div-block-16"><img alt=""
+                                    src="images/linkedin.png">
                             </div>
-                            <div class="div-block-16"><img alt="" src="images/facebook.png">
+                            <div class="div-block-16"><img alt=""
+                                    src="images/facebook.png">
                             </div>
                         </div>
                         <div class="text-block-6">Create an account with your Email</div>
                         <div class="form-block w-form">
-
-                            <span><%= existence %></span>
-                            <form action="/register/students" method="post">
-                                <!-- <input id="first-name" class="input100" type="text" name="name" placeholder="name">
-                                <input id="first-name" class="input100" type="text" name="email" placeholder="Email">
-                                <input id="first-name" class="input100" type="text" name="password" placeholder="password">
-                                <input type="submit" value="submission"> -->
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">full Name</label>
-                                    <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter full name">
-                                    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
-
-
-
-                            </form>
-                            <div class="w-form-done">
-                                <div>Thank you! Your submission has been received!</div>
-                            </div>
-                            <div class="w-form-fail">
-                                <div>Oops! Something went wrong while submitting the form.</div>
-                            </div>
+                            <form name="wf-form-Login-Form" class="form w-clearfix" id="wf-form-Login-Form"
+                                method="post" data-name="Login Form"><input name="name" class="text-field w-input"
+                                    id="name" type="text" maxlength="256" placeholder="Name" data-name="Name"><input
+                                    name="email" class="text-field-2 w-input" id="email" required="" type="email"
+                                    maxlength="256" placeholder="Email" data-name="Email"><input name="Password"
+                                    class="text-field-3 w-input" id="Password" required="" type="password"
+                                    maxlength="256" placeholder="Password" data-name="Password"><input
+                                    class="submit-button w-button" type="submit" value="SIGN UP"
+                                    data-wait="Please wait..."></form>
+                           
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+   
 </body>
 
 </html>

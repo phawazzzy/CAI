@@ -30,7 +30,7 @@ body {
     -ms-grid-rows: auto 16px auto;
     grid-template-rows: auto auto;
     background-color: #dedde9;
-    background-image: url("../images/symphony.png");
+    background-image: url("images/symphony.png");
     background-position: 0px 0px;
     background-size: 125px;
 }
@@ -73,6 +73,8 @@ img {
     border-radius: 7px;
 }
 
+
+
 .w-container .w-row {
     margin-left: -10px;
     margin-right: -10px;
@@ -95,7 +97,7 @@ img {
     border-right: 1px none #000;
     border-radius: 12px 0px 0px 12px;
     background-color: hsla(249, 77%, 38%, 1);
-    background-image: url("../images/kisspng-reading-book-writing-test-student-5a6c1602a52d78.7200107315170329626766.png");
+    background-image: url("images/kisspng-reading-book-writing-test-student-5a6c1602a52d78.7200107315170329626766.png");
     background-position: 0px 0px;
     background-size: cover;
 }
@@ -111,6 +113,7 @@ img {
     height: 100%;
     width: 480px;
     border-radius: 13px 0px 0px 13px;
+   
     margin-left: -9px;
 }
 
@@ -185,9 +188,9 @@ h1 {
     margin-left: auto;
     padding-bottom: 4px;
 }
-
+/* 
 .w-form-done {
-    display: none;
+    display: block;
     padding: 20px;
     text-align: center;
     background-color: #dddddd;
@@ -198,7 +201,7 @@ h1 {
     margin-top: 10px;
     padding: 10px;
     background-color: #ffdede;
-}
+} */
 
 button,
 input,
