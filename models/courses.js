@@ -9,6 +9,7 @@ let courseSchema = new Schema({
     author: { type: String },
 
     image: { type: String },
+    summary: { type: String },
     content: { type: String },
     createdDate: {
         type: Date,

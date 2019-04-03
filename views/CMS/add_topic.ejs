@@ -15,27 +15,106 @@
 
 <body class="animsition">
     <div class="page-wrapper">
-        <%- include('../partials/sideNav.ejs') %>
 
-            <%- include('../partials/cmsHeader.ejs') %>
+        <%- include('../partials/cmsHeader.ejs') %>
+            <%- include('../partials/sideNav.ejs') %>
+
 
                 <!-- MAIN CONTENT -->
                 <div class="main-content">
                     <div class="section__content section__content--p30">
                         <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-12">
+                            <div class="container">
+                                <div class="row">
+                                    <!-- <div class="col-md-12"> -->
 
+                                    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-5 pb-2 mb-3">
+                                            <h1 class="h2 rw"><span class="text-info">add new topics</span></h1>
+                                        </div>
+                                        <!-- FORM -->
+                                        <form action="" method="post" class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                            <!-- INPUT FOR TOPIC TITLE -->
+                                            <div class="form-group row">
+                                                <label for="topic title" class="col-sm-2 col-form-label">topic title</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" id="" name="topic_title" placeholder="topic title" value="">
+                                                </div>
+                                            </div>
+                                            <!-- END OF INPUT FOR TOPIC TITLE -->
+                                            <hr class="my-4" />
+
+                                            <!-- input image on topic -->
+                                            <div class="form-group row">
+                                                <label for="topic image" class="col-sm-2 col-form-label">IMAGE OF TOPIC</label>
+                                                <div class="col-sm-10">
+                                                    <input type="file" class="form-control" name="image">
+
+                                                    <img src="" class="p-2 mt-2" height='50px' />
+                                                    <a href="">Click to Preview current image </a>
+                                                </div>
+                                            </div>
+                                            <!-- end of input image  on topic -->
+                                            <hr class="my-4" />
+
+                                            <!-- input author -->
+                                            <div class="form-group row">
+                                                <label for="author" class="col-sm-2 col-form-label">Author</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" id="" name="author" placeholder="author" value="">
+                                                </div>
+                                            </div>
+                                            <!-- end of input author -->
+                                            <hr class="my-4" />
+
+                                            <!-- input summary content -->
+                                            <div class="form-group row">
+                                                <label for="content" class="col-sm-2 col-form-label">content</label>
+                                                <div class="col-sm-10">
+                                                    <textarea name="summary" class="form-control" id="" cols="30" rows="5">
+                                                        
+                                                    </textarea>
+                                                </div>
+                                            </div>
+                                            <!-- end of summary content -->
+                                            <hr class="my-4" />
+
+                                            <!-- input topic content -->
+                                            <div class="form-group row">
+                                                <label for="summary" class="col-sm-2 col-form-label">summary</label>
+                                                <div class="col-sm-10">
+                                                    <textarea name="content" class="form-control" id="" cols="30" rows="5">
+                                                            
+                                                        </textarea>
+                                                </div>
+                                            </div>
+                                            <!-- end of topic content -->
+                                            <hr class="my-4" />
+
+                                            <div class="form-group row d-flex justify-content-between float-left " style="width:100%">
+                                                <div class="">
+                                                    <button type="submit" class="btn btn-primary">upload</button>
+                                                </div>
+                                                <a href="/topic" class="btn btn-success pull-right"><i class="fa fa-caret-left pr-2"> </i>Back to List</a>
+
+                                            </div>
+
+                                        </form>
+
+                                    </main>
+                                    <!-- </div> -->
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- END OF MAIN CONTENT -->
 
-                    <!-- SCRIPT -->
-                    <%- include('../partials/cmsScript.ejs') %>
-                        <!-- END OF SCRIPT -->
+
                 </div>
+                <!-- SCRIPT -->
+                <%- include('../partials/cmsScript.ejs') %>
+                    <!-- END OF SCRIPT -->
+    </div>
 </body>
 
 </html>

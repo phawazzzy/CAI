@@ -64,7 +64,7 @@ html {
 }
 
 .div-block-13 {
-    margin-top: 30px;
+    margin-top: 60px;
     margin-right: 80px;
     margin-left: 80px;
 }
@@ -533,7 +533,7 @@ summary {
     height: 60px;
 }
 
-.nav-icon{
+.nav-icon {
     font-size: 40px;
     margin: 15px 15px 15px;
 }
@@ -554,7 +554,6 @@ textarea {
     width: 100%;
     height: 38px;
     padding: 8px 12px;
-  
     font-size: 14px;
     line-height: 1.4285;
     color: #333333;
@@ -585,5 +584,5 @@ input.w-button {
 
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto  auto auto;
+    grid-template-columns: auto auto auto auto;
 }
