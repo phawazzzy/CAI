@@ -17,6 +17,8 @@ router.get('/about', controller.about);
 router.get('/courses', isLoggedIn, controller.courses);
 router.get('/topic', adminLoggedIn, cms_controller.topic);
 router.get('/add_topic', adminLoggedIn, cms_controller.add_topic);
+router.get('/classroom', controller.classroom);
+
 router.get("/dashboard", adminLoggedIn, cms_controller.dashboard);
 
 

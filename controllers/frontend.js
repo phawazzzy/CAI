@@ -25,3 +25,11 @@ exports.courses = (req, res) => {
     res.render("courses", {})
 }
 
+
+exports.classroom = (req, res) => {
+    res.render("classroom", {})
+}
+
+exports.topic = (req, res) => {
+    res.render("CMS/topic", {})
+}
