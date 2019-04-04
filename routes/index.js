@@ -29,7 +29,7 @@ router.get('/topic', adminLoggedIn, cms_controller.topic);
 // router.get('/add_topic', adminLoggedIn, cms_controller.add_topic);
 router.get('/classroom', controller.classroom);
 router.get("/dashboard", adminLoggedIn, cms_controller.dashboard);
-
+router.get('/summary', controller.summary)
 
 // HANDLE IMAGES
 // -----

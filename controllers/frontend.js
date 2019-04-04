@@ -41,3 +41,7 @@ exports.contact = (req, res) => {
 exports.news = (req, res) => {
     res.render("news", {})
 }
+
+exports.summary = (req, res) => {
+    res.render("summary", {})
+}
