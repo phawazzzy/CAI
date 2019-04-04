@@ -30,18 +30,6 @@ router.get('/topic', adminLoggedIn, cms_controller.topic);
 router.get('/classroom', controller.classroom);
 router.get("/dashboard", adminLoggedIn, cms_controller.dashboard);
 
-user.find({})
-    // const storage = multer.diskStorage({
-    //     destination: "./public/uploads/",
-    //     filename: function(req, res, cb) {
-    //         cb(null, file.fieldname + "-" + Date.now() + path.extname(file.originalname));
-    //     }
-    // });
-
-// // init uploads
-// const upload = multer({
-//     storage: storage
-// }).single('image')
 
 // HANDLE IMAGES
 // -----
