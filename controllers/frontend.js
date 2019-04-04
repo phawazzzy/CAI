@@ -33,3 +33,10 @@ exports.classroom = (req, res) => {
 exports.topic = (req, res) => {
     res.render("CMS/topic", {})
 }
+exports.contact = (req, res) => {
+    res.render("contact", {})
+}
+
+exports.news = (req, res) => {
+    res.render("news", {})
+}
