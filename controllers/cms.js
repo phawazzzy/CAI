@@ -1,29 +1,19 @@
 let user = require('../models/user')
+let courses = require('../models/courses')
 
-exports.dashboard = (req, res) => {
-    // let role = req.user.role
-    user.find({ role: "admin" }).then((result) => {
-            if (result) {
-                console.log(result)
-                res.render("CMS/dashboard", { result })
-            } else {
-                res.render("CMS/dashboard", {})
-            }
-        })
-        // res.render("CMS/dashboard")
-}
+exports.dashboard = (req, res, next) => {
+    let username = req.user.name
+    let userEmail = req.user.email
 
-exports.add_topic = (req, res) => {
-    // let role = req.user.role
-    user.find({ role: "admin" }).then((result) => {
-        if (result) {
-            console.log(result)
-            res.render("CMS/add_topic", { result })
+    courses.find({}).then((doc) => {
+        if (doc) {
+            res.render("CMS/dashboard", { username, userEmail, doc })
         } else {
-            res.render("CMS/add_topic", {})
+            res.render("CMS/dashboard")
         }
     })
 }
+
 
 
 exports.admin_register = (req, res) => {
@@ -34,14 +24,17 @@ exports.admin_login = (req, res) => {
     res.render("CMS/login", {})
 }
 
-exports.topic = (req, res) => {
-    user.find({ role: "admin" }).then((result) => {
-            if (result) {
-                console.log(result)
-                res.render("CMS/topic", { result })
-            } else {
-                res.render("CMS/topic", {})
-            }
-        })
-        // res.render("CMS/topic", {})
+
+exports.topic = (req, res, next) => {
+    let username = req.user.name
+    let userEmail = req.user.email
+
+    courses.find({}).then((doc) => {
+        if (doc) {
+            console.log(doc)
+            res.render("CMS/topic", { username, userEmail, doc })
+        } else {
+            res.render("CMS/topic")
+        }
+    })
 }

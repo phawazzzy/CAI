@@ -21,7 +21,50 @@
                     <div class="section__content section__content--p30">
                         <div class="container-fluid">
                             <div class="row">
+                                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
 
+                                    <div class="col-lg-12 col-nd-12 col-sm-12 col-xs-12 px-0">
+                                        <a href="/add_topic" class="btn btn-primary">Create New topic <span class="fa fa-plus-circle"></span></a>
+                                    </div>
+
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-5 pb-2 mb-3">
+                                                <h1 class="h2 rw"><span class="text-info">list of topics</span></h1>
+                                            </div>
+                                        </div>
+
+                                        <div class="col card-deck mt-3 pl-2">
+                                            <% for (var i = doc.length - 1; i >= 0; --i) { %>
+
+                                                <div class="col-sm-4 col-xs-12 px-2">
+                                                    <div class="border mb-4 mx-1 px-0">
+                                                        <div class="card-header text-center d-flex">
+                                                            <b> <%= doc[i].topic_title %></b>
+                                                        </div>
+                                                        <div class="card-body text-center pb-1">
+                                                            <img src="<%= doc[i].image %>" alt="<%= doc[i].name %>" class="img-fluid p-2">
+                                                            <hr class="my-4" />
+                                                            <div class="text-center pb-1">
+                                                                <p>
+                                                                    <%= doc[i].content %>
+                                                                        <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dicta sequi aut quae. Nesciunt delectus magnam blanditiis quo vitae eveniet tenetur adipisci iusto earum. Consequuntur, dignissimos. Ab vel autem corporis? -->
+
+                                                                </p>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="card-footer justify-content-center d-flex">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <% }%>
+
+                                        </div>
+                                    </div>
+
+                                </main>
                             </div>
                         </div>
                     </div>
