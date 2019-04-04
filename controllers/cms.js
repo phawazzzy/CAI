@@ -31,6 +31,7 @@ exports.topic = (req, res, next) => {
 
     courses.find({}).then((doc) => {
         if (doc) {
+            console.log(doc)
             res.render("CMS/topic", { username, userEmail, doc })
         } else {
             res.render("CMS/topic")
