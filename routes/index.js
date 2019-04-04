@@ -6,6 +6,8 @@ let cms_controller = require("../controllers/cms");
 var multer = require('multer');
 const async = require("async");
 var courses = require("../models/courses")
+var test = require("../models/test")
+
 const cloudinary = require("cloudinary");
 const cloudinaryStorage = require("multer-storage-cloudinary");
 const path = require("path")
@@ -147,7 +149,43 @@ router.route("/add_topic")
         res.redirect("/topic");
     });
 
-// not using this
+// add test route
+
+router.route("/add_test")
+    .all(adminLoggedIn)
+    .get(function(req, res) {
+        try {
+            // let admin = user.find({ role: "admin" })
+            let username = req.user.name
+            let userEmail = req.user.email
+            res.render("CMS/add_test", { username, userEmail })
+        } catch (err) {
+            showError(req, "GET", "add_test", err);
+            res.redirect("/dashboard");
+        }
+    })
+    .post(async function(req, res) {
+        let pageData = {
+            topic_title: req.body.topic_title,
+            question: req.body.question,
+            choices: req.body.choices,
+            correct: req.body.correct,
+        };
+        // if (req.file) {
+        //     pageData.image = `uploads/${req.file.filename}`
+        //         // pageData.publicid = req.file.public_id;
+        // }
+
+        try {
+            await test.create(pageData);
+            req.flash("success", "test Creation Successful!");
+        } catch (err) {
+            showError(req, "POST", "/add_test", err);
+        }
+
+        res.redirect("/dashboard");
+    });
+
 
 
 
