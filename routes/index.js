@@ -9,6 +9,8 @@ router.get('/login', controller.login);
 router.get('/register', controller.register);
 router.get('/about', controller.about);
 router.get('/courses', controller.courses);
+router.get('/contact', controller.contact);
+router.get('/news', controller.news);
 
 
 

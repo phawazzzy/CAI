@@ -18,3 +18,11 @@ exports.about = (req, res) => {
 exports.courses = (req, res) => {
     res.render("courses", {})
 }
+
+exports.contact = (req, res) => {
+    res.render("contact", {})
+}
+
+exports.news = (req, res) => {
+    res.render("news", {})
+}
