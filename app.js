@@ -8,7 +8,10 @@ var session = require('express-session');
 var passport = require('passport');
 const MongoStore = require("connect-mongodb-session")(session);
 const flash = require('express-flash');
+const dotenv = require("dotenv");
 
+
+dotenv.config();
 
 
 var db_uri = 'mongodb://localhost:27017/CAI'
@@ -17,6 +20,7 @@ mongoose.connect(db_uri, { useNewUrlParser: true, useCreateIndex: true }).then(c
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 require("./config/passport");
+
 
 var app = express();
 

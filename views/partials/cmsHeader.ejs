@@ -122,59 +122,58 @@
                             </div>
                         </div>
                     </div>
-                    <% for(let i=0; i < result.length; i++) { %>
 
-                        <div class="account-wrap">
-                            <div class="account-item clearfix js-item-menu">
-                                <div class="image">
-                                    <img src="images/icon/avatar.jpg" alt="John Doe" />
-                                </div>
-                                <div class="content">
-                                    <a class="js-acc-btn" href="#">
-                                        <%- result[i].name%>
-                                    </a>
-                                </div>
-                                <div class="account-dropdown js-dropdown">
-                                    <div class="info clearfix">
-                                        <div class="image">
-                                            <a href="#">
-                                            <img src="images/icon/avatar.jpg" alt="<%- result[i].name%>" />
+                    <div class="account-wrap">
+                        <div class="account-item clearfix js-item-menu">
+                            <div class="image">
+                                <img src="images/icon/avatar.jpg" alt="John Doe" />
+                            </div>
+                            <div class="content">
+                                <a class="js-acc-btn" href="#">
+                                    <%- username%>
+                                </a>
+                            </div>
+                            <div class="account-dropdown js-dropdown">
+                                <div class="info clearfix">
+                                    <div class="image">
+                                        <a href="#">
+                                            <img src="images/icon/avatar.jpg" alt="<%- username %>" />
                                         </a>
-                                        </div>
+                                    </div>
 
 
 
-                                        <div class="content">
-                                            <h5 class="name">
-                                                <a href="#">
-                                                    <%- result[i].name%>
-                                                </a>
-                                            </h5>
-                                            <span class="email"><%- result[i].email%></span>
-                                        </div>
-                                    </div>
-                                    <div class="account-dropdown__body">
-                                        <div class="account-dropdown__item">
+                                    <div class="content">
+                                        <h5 class="name">
                                             <a href="#">
-                                                <i class="zmdi zmdi-account"></i>Account</a>
-                                        </div>
-                                        <div class="account-dropdown__item">
-                                            <a href="#">
-                                                <i class="zmdi zmdi-settings"></i>Setting</a>
-                                        </div>
-                                        <div class="account-dropdown__item">
-                                            <a href="#">
-                                                <i class="zmdi zmdi-money-box"></i>Billing</a>
-                                        </div>
+                                                <%- username%>
+                                            </a>
+                                        </h5>
+                                        <span class="email"><%- userEmail%></span>
                                     </div>
-                                    <div class="account-dropdown__footer">
-                                        <a href="/adminLogout">
-                                            <i class="zmdi zmdi-power"></i>Logout</a>
+                                </div>
+                                <div class="account-dropdown__body">
+                                    <div class="account-dropdown__item">
+                                        <a href="#">
+                                            <i class="zmdi zmdi-account"></i>Account</a>
                                     </div>
+                                    <div class="account-dropdown__item">
+                                        <a href="#">
+                                            <i class="zmdi zmdi-settings"></i>Setting</a>
+                                    </div>
+                                    <div class="account-dropdown__item">
+                                        <a href="#">
+                                            <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                    </div>
+                                </div>
+                                <div class="account-dropdown__footer">
+                                    <a href="/adminLogout">
+                                        <i class="zmdi zmdi-power"></i>Logout</a>
                                 </div>
                             </div>
                         </div>
-                        <%}%>
+                    </div>
+
 
                 </div>
             </div>
