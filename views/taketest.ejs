@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css" class="css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="index.js"></script>
+    <title>History of Computers</title>
+</head>
+
+<body oncontextmenu="return false;" style="background: #EDEDED">
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8" style="background:white; margin-top: 80px;height: 400px">
+            <h1 class="score"></h1>
+            <div class="header">
+                <center>
+                    <h1 class="btn btn-primary questionNumber" style="padding-top:5px; width:400px; height: 60px; background:#82A608; font-size:2em; color:white; border-color:white">
+                    </h1>
+            </div>
+            </center>
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10">
+                    <h2 class="question" style=" padding:10px; background: #EDEDED; height:100px"></h2>
+                </div>
+                <div class="col-lg-1"></div>
+
+            </div>
+
+
+            <form name="form1">
+                <div class="answers" style="margin-left: 80px">
+                    <input type="radio" name="radioChoice"> <label></label><br>
+                    <input type="radio" name="radioChoice"> <label></label><br>
+                    <input type="radio" name="radioChoice"> <label></label><br>
+                    <input type="radio" name="radioChoice"> <label></label><br><br>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="button"><button type="button" class="btn btn-primary" style="padding-top:5px; width:100px; height: 40px; background:#82A608; font-size:1em; color:white; border-color:white" onclick="next()">Next</button></div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="button">
+                                <center><button class="btn btn-primary" style="padding-top:5px; width:100px; height: 40px; background:#82A608; font-size:1em; color:white; border-color:white" type="button" onclick="back()">Back</button></center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+        document.onkeydown = function(e) {
+            if (event.keyCode == 123) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                return false;
+            }
+        }
+
+        function ready(fn) {
+            if (document.readyState != 'loading') {
+                fn();
+            } else {
+                document.addEventListener('DOMContentLoaded', fn);
+            }
+        }
+
+        ready(choices);
+
+        var content = <%-JSON.stringify(result)%>;
+
+
+        var x = 0;
+        var y = 1;
+        var score = 0;
+
+        function choices() {
+            if (content[x] === undefined) {
+                document.querySelector('.score').textContent = 'You got ' + score + " questions correctly";
+                document.querySelector('.score').innerHTML +=
+                    "<hr> <button class='btn btn-primary' style=' background:#82A608; border-color: white'  onClick='window.location.reload()'> Retake Test </button>"
+                document.form1.style.visibility = 'hidden';
+                document.querySelector('.header').style.visibility = 'hidden';
+                document.querySelector('.question').style.visibility = 'hidden';
+
+
+            } else {
+                var questionNumber = document.querySelector('.questionNumber');
+                questionNumber.textContent = 'Question#' + y;
+
+                var question = document.querySelector('.question');
+                question.textContent = content[x]['question'];
+
+                var choices = document.querySelectorAll('label');
+                for (var i = 0; i < choices.length; i++) {
+                    choices[i].textContent = content[x]['choices'][i];
+                }
+            }
+        }
+
+        function next() {
+            var inputs = document.querySelectorAll('input');
+
+            if (content[x] === undefined) {
+                return false;
+            } else if (inputs[0].checked !== true && inputs[1].checked !== true && inputs[2].checked !== true && inputs[3]
+                .checked !== true) {
+                alert('Please select an answer');
+
+            } else {
+                for (var i = 0; i < inputs.length; i++) {
+                    if (inputs[i].checked === true && i === content[x]['correct']) {
+                        score++;
+                    }
+                    inputs[i].checked = false;
+                }
+
+                x++;
+                y++;
+                choices();
+            }
+        }
+
+        function back() {
+            var inputs = document.querySelectorAll('input');
+
+            if (x === 0) {
+                return false;
+
+            } else {
+                x--;
+                y--;
+                score--;
+                choices();
+            }
+        }
+        const bcrypt = require("bcrypt-nodejs")
+
+        var hash = bcrypt.hashSync("love");
+        console.log(hash)
+    </script>
+</body>
+
+</html>

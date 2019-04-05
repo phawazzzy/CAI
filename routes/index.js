@@ -32,6 +32,16 @@ router.get('/contact', isLoggedIn, controller.contact)
     // router.get('/add_topic', adminLoggedIn, cms_controller.add_topic);
 router.get('/classroom', controller.classroom);
 router.get("/dashboard", adminLoggedIn, cms_controller.dashboard);
+// router.get("/taketest", isLoggedIn, controller.takeTest)
+
+
+// take test route
+router.get('/tests/historyofcomputers', function(req, res, next) {
+    test.find({}).then(function(result) {
+        console.log(result)
+        res.render("taketest", { result });
+    })
+})
 
 
 // HANDLE IMAGES
@@ -164,26 +174,27 @@ router.route("/add_test")
             res.redirect("/dashboard");
         }
     })
-    .post(async function(req, res) {
-        let pageData = {
+    .post(upload.single("image"), async function(req, res) {
+        let testData = {
             topic_title: req.body.topic_title,
             question: req.body.question,
-            choices: req.body.choices,
+            choices: req.body.chioces,
             correct: req.body.correct,
         };
-        // if (req.file) {
-        //     pageData.image = `uploads/${req.file.filename}`
-        //         // pageData.publicid = req.file.public_id;
-        // }
+        if (req.file) {
+            pageData.image = `uploads/${req.file.filename}`
+                // pageData.publicid = req.file.public_id;
+        }
 
         try {
-            await test.create(pageData);
+            await test.create(testData);
+            console.log(testData)
             req.flash("success", "test Creation Successful!");
         } catch (err) {
             showError(req, "POST", "/add_test", err);
         }
 
-        res.redirect("/dashboard");
+        res.redirect("/add_test");
     });
 
 

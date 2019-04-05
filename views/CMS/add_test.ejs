@@ -32,7 +32,7 @@
                                             <h1 class="h2 rw"><span class="text-info">add new question</span></h1>
                                         </div>
                                         <!-- FORM -->
-                                        <form action="/add_test" method="post" class="col-lg-10 col-md-10 col-sm-10 col-xs-10" enctype="multipart/form-data">
+                                        <form action="/add_test" method="POST" class="col-lg-10 col-md-10 col-sm-10 col-xs-10" enctype="multipart/form-data">
                                             <!-- INPUT FOR TOPIC TITLE -->
                                             <div class="form-group row">
                                                 <label for="topic title" class="col-sm-2 col-form-label">topic title</label>
@@ -141,6 +141,17 @@
                 <!-- SCRIPT -->
                 <%- include('../partials/cmsScript.ejs') %>
                     <!-- END OF SCRIPT -->
+                    <script>
+                        CKEDITOR.replace("question", {
+                            toolbar: [{
+                                    name: 'basic',
+                                    items: ['Font', 'Format', 'FontSize', 'TextColor', 'BGColor', '-', 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'Copy', 'Cut', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Image', '-', 'NumberedList', 'BulletedList']
+                                },
+
+                            ],
+                            height: 200
+                        });
+                    </script>
     </div>
 </body>
 
