@@ -30,6 +30,8 @@ router.get('/topic', adminLoggedIn, cms_controller.topic);
 router.get('/classroom', controller.classroom);
 router.get("/dashboard", adminLoggedIn, cms_controller.dashboard);
 router.get('/summary', controller.summary)
+router.get('/course', controller.coursepage)
+
 
 // HANDLE IMAGES
 // -----
