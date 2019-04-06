@@ -1,127 +1,79 @@
 <!DOCTYPE html>
-<html class=" w-mod-js" data-wf-status="1" data-wf-site="5ca1762ab7e3ed999e21008c"
-    data-wf-page="5ca1762ab7e3edabd021008d" data-wf-domain="courses-page.webflow.io">
+<html class=" w-mod-js" data-wf-status="1" data-wf-site="5ca1762ab7e3ed999e21008c" data-wf-page="5ca1762ab7e3edabd021008d" data-wf-domain="courses-page.webflow.io">
 
 <head>
     <title>Classroom</title>
-    <link rel="stylesheet" href="styles/course.css">
-    <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
-    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="plugins/video-js/video-js.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="styles/contact.css">
-    <link rel="stylesheet" type="text/css" href="styles/contact_responsive.css">
-    <link rel="favicon" href="images/molecule.png">
-    <link rel="shortcut icon" href="images/molecule.png" type="image/png">
+    <link rel="stylesheet" href="/styles/course.css">
+    <link rel="stylesheet" type="text/css" href="/styles/bootstrap4/bootstrap.min.css">
+    <link href="/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/plugins/video-js/video-js.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/styles/contact.css">
+    <link rel="stylesheet" type="text/css" href="/styles/contact_responsive.css">
+    <link rel="favicon" href="/images/molecule.png">
+    <link rel="shortcut icon" href="/images/molecule.png" type="image/png">
 
 </head>
 
 <body class="body">
     <%- include('partials/header.ejs') %>
 
-    <div class="toggle-bar w-container">
+        <div class="toggle-bar w-container">
 
-        <ul class="nav nav-tabs my-nav " id="myTab" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-                    aria-selected="true">Lessons</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-                    aria-controls="profile" aria-selected="false">Quiz</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
-                    aria-controls="contact" aria-selected="false">Profile</a>
-            </li>
-        </ul>
+            <ul class="nav nav-tabs my-nav " id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Lessons</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Quiz</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Profile</a>
+                </li>
+            </ul>
 
-        <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                <div class="div-block-29">
-                    <div class="div-block-30">
-                        <div class="text-block-16">1</div>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                    <div class="div-block-29">
+                        <div class="div-block-30">
+                            <div class="text-block-16">1</div>
+                        </div>
+                        <div class="text-block-15">
+                            <%- result.topic_title%>
+                        </div>
                     </div>
-                    <div class="text-block-15">An Introduction to robotics from a cybernetic perspective</div>
+                    <div class="div-block-31" style="background-image: <%= result.image%>"></div>
+                    <div class="div-block-32">
+                        <h3>Robotics</h3>
+                        <%- result.content %>
+                    </div>
+                    <div class="div-block-28">
+                        <div class="text-block-14">Lesson completed</div>
+                    </div>
                 </div>
-                <div class="div-block-31"></div>
-                <div class="div-block-32">
-                    <h3>Robotics</h3>
-                    <p>Robotics is an interdisciplinary branch of engineering and science that includes mechanical
-                        engineering,
-                        electronic engineering, informationengineering, computer science, and others. Robotics deals
-                        with the
-                        design,construction, operation, and use of robots, as well as computer systems fortheir control,
-                        sensory
-                        feedback, and information processing.</p>
-                    <p>These technologies are used to develop machines that can substitute forhumans and replicate human
-                        actions. Robots can be used in many situationsand for lots of purposes, but today many are used
-                        in
-                        dangerous environments(including bomb detection and deactivation), manufacturing processes,
-                        orwhere
-                        humans cannot survive (e.g. in space). Robots can take on any form butsome are made to resemble
-                        humans
-                        in appearance. This is said to help in theacceptance of a robot in certain replicative behaviors
-                        usually
-                        performed bypeople. Such robots attempt to replicate walking, lifting, speech, cognition,
-                        andbasically
-                        anything a human can do. Many of today's robots are inspired bynature, contributing to the field
-                        of
-                        bio-inspired robotics.</p>
-                    <p>The concept of creating machines that can operate autonomously dates back toclassical times, but
-                        research
-                        into the functionality and potential uses of robotsdid not grow substantially until the 20th
-                        century.
-                        Throughout history, it hasbeen frequently assumed by various scholars, inventors, engineers, and
-                        technicians that robots will one day be able tomimic human behavior and manage tasks in a
-                        human-like
-                        fashion. Today, robotics is a rapidly growing field, astechnological advances continue;
-                        researching,
-                        designing, and building new robots serve various practical purposes,whether domestically,
-                        commercially,
-                        or militarily. Many robots are built to do jobs that are hazardous to people such asdefusing
-                        bombs,
-                        finding survivors in unstable ruins, and exploring mines and shipwrecks. Robotics is also used
-                        in
-                        STEM(science, technology, engineering, and mathematics) as a teaching aid.[1] The advent of
-                        nanorobots,
-                        microscopic robotsthat can be injected into the human body, could revolutionize medicine and
-                        human
-                        health.[</p>
-                    <p>Robotics is a branch of engineering that involves the conception, design, manufacture, and
-                        operation of
-                        robots. This fieldoverlaps with electronics, computer science, artificial intelligence,
-                        mechatronics,
-                        nanotechnology and bioengineering.</p>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    Check Back Later
                 </div>
-                <div class="div-block-28">
-                    <div class="text-block-14">Lesson completed</div>
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    Not Ready
                 </div>
             </div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                Check Back Later
-            </div>
-            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                Not Ready
-            </div>
+
         </div>
 
-    </div>
 
-    <%- include('partials/footer.ejs') %>
-    <!-- <script src="js/jquery-3.2.1.min.js"></script>
+        <%- include('partials/footer.ejs') %>
+            <!-- <script src="js/jquery-3.2.1.min.js"></script>
     <script src="styles/bootstrap4/popper.js"></script>
     <script src="styles/bootstrap4/bootstrap.js"></script>
 
     <script src="styles/bootstrap4/bootstrap.min.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+            </script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+            </script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+            </script>
 </body>
 
 </html>
