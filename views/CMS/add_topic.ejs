@@ -157,10 +157,37 @@
             <!-- END OF MAIN CONTENT -->
 
 
-        </div>
-        <!-- SCRIPT -->
-        <%- include('../partials/cmsScript.ejs') %>
-        <!-- END OF SCRIPT -->
+                </div>
+                <!-- SCRIPT -->
+                <%- include('../partials/cmsScript.ejs') %>
+                    <!-- END OF SCRIPT -->
+                    <script type="text/javascript">
+                        CKEDITOR.replace("summary", {
+                            toolbar: [{
+                                    name: 'basic',
+                                    items: ['Font', 'Format', 'FontSize', 'TextColor', 'BGColor', '-', 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'Copy', 'Cut', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Image', '-', 'NumberedList', 'BulletedList']
+                                },
+                                // '/', {
+                                //     name: 'insert',
+                                //     items: ['Link', 'Unlink', 'Outdent', 'Indent', 'SpecialChar', 'InsertPre', 'HorizontalRule', 'PageBreak', '-', 'Image', '-', 'SelectAll', 'RemoveFormat', 'Undo', 'Redo', 'Maximize']
+                                // },
+                            ],
+                            height: 200
+                        });
+
+                        CKEDITOR.replace("content", {
+                            toolbar: [{
+                                    name: 'basic',
+                                    items: ['Font', 'Format', 'FontSize', 'TextColor', 'BGColor', '-', 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'Copy', 'Cut', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Image', '-', 'NumberedList', 'BulletedList']
+                                },
+                                '/', {
+                                    name: 'insert',
+                                    items: ['Link', 'Unlink', 'Outdent', 'Indent', 'SpecialChar', 'InsertPre', 'HorizontalRule', 'PageBreak', '-', 'Image', '-', 'SelectAll', 'RemoveFormat', 'Undo', 'Redo', 'Maximize']
+                                },
+                            ],
+                            height: 200
+                        });
+                    </script>
     </div>
 </body>
 

@@ -11,8 +11,10 @@ exports.homepage = async (req, res) => {
     free = await courses.find({type: "free"});
     featured = await courses.findOne({type: "featured"});
 
+    let pagename = "home";
+
     console.log(free)
-    res.render("index", {free, featured,})
+    res.render("index", {free, featured, pagename,})
 };
 
 
@@ -28,34 +30,39 @@ exports.register = (req, res) => {
 
 }
 exports.about = (req, res) => {
-    res.render("about", {});
+    let pagename = "about";
+    res.render("about", {pagename});
+    
 };
 
 exports.courses = (req, res) => {
-    res.render("courses", {})
+    let pagename = "courses";
+    res.render("courses", {pagename})
 }
 
 
 exports.classroom = (req, res) => {
-    res.render("classroom", {})
+    let pagename = "classroom";
+    res.render("classroom", {pagename})
 }
 
 exports.topic = (req, res) => {
-    res.render("CMS/topic", {})
+    let pagename = "topic";
+    res.render("CMS/topic", {pagename})
 }
 
 exports.contact = (req, res) => {
-    res.render("contact", {})
+    let pagename = "contact";
+    res.render("contact", {pagename})
 }
 
-exports.news = (req, res) => {
-    res.render("news", {})
-}
 
 exports.summary = (req, res) => {
-    res.render("summary", {})
+    let pagename = "summary";
+    res.render("summary", {pagename})
 }
 
 exports.coursepage = (req, res) => {
-    res.render("course", {})
+    let pagename = "coursepage";
+    res.render("course", {pagename})
 }
