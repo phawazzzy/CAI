@@ -66,7 +66,8 @@
                                 <div class="logo_container">
                                     <a href="/">
                                         <div class="logo_content d-flex flex-row align-items-end justify-content-start">
-                                            <div class="logo_img"><img src="images/molecule.png" width="50px" alt=""></div>
+                                            <div class="logo_img"><img src="images/molecule.png" width="50px" alt="">
+                                            </div>
                                             <div class="logo_text">C<b>A</b>I</div>
                                         </div>
                                     </a>
@@ -102,9 +103,10 @@
                             <div class="header_search_content d-flex flex-row align-items-center justify-content-end">
                                 <form action="#" class="header_search_form">
                                     <input type="search" class="search_input" placeholder="Search" required="required">
-                                    <button class="header_search_button d-flex flex-column align-items-center justify-content-center">
-									<i class="fa fa-search" aria-hidden="true"></i>
-								</button>
+                                    <button
+                                        class="header_search_button d-flex flex-column align-items-center justify-content-center">
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                    </button>
                                 </form>
                             </div>
                         </div>
@@ -125,9 +127,10 @@
             <div class="search">
                 <form action="#" class="header_search_form menu_mm">
                     <input type="search" class="search_input menu_mm" placeholder="Search" required="required">
-                    <button class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
-					<i class="fa fa-search menu_mm" aria-hidden="true"></i>
-				</button>
+                    <button
+                        class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
+                        <i class="fa fa-search menu_mm" aria-hidden="true"></i>
+                    </button>
                 </form>
             </div>
             <nav class="menu_nav">
@@ -172,11 +175,16 @@
 
                                             <div class="home_text">
                                                 <div class="home_title">Computer Assisted Learning</div>
-                                                <div class="home_subtitle">Bringing you the best Services at your fingertips</div>
+                                                <div class="home_subtitle">Bringing you the best Services at your
+                                                    fingertips</div>
                                             </div>
                                             <div class="home_buttons">
-                                                <div class="button home_button"><a href="#">learn more<div class="button_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></div></a></div>
-                                                <div class="button home_button"><a href="#">see all courses<div class="button_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></div></a></div>
+                                                <div class="button home_button"><a href="#">learn more<div
+                                                            class="button_arrow"><i class="fa fa-angle-right"
+                                                                aria-hidden="true"></i></div></a></div>
+                                                <div class="button home_button"><a href="#">see all courses<div
+                                                            class="button_arrow"><i class="fa fa-angle-right"
+                                                                aria-hidden="true"></i></div></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -209,7 +217,6 @@
 						</div>
 					</div>
 				</div>
-
 				
 				<div class="owl-item">
 					
@@ -247,32 +254,41 @@
                 <div class="row">
                     <div class="col">
                         <!-- Home Slider Nav -->
-                        <div class="home_slider_nav_container d-flex flex-row align-items-start justify-content-between">
-                            <div class="home_slider_nav home_slider_prev trans_200"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
-                            <div class="home_slider_nav home_slider_next trans_200"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+                        <div
+                            class="home_slider_nav_container d-flex flex-row align-items-start justify-content-between">
+                            <div class="home_slider_nav home_slider_prev trans_200"><i class="fa fa-angle-left"
+                                    aria-hidden="true"></i></div>
+                            <div class="home_slider_nav home_slider_next trans_200"><i class="fa fa-angle-right"
+                                    aria-hidden="true"></i></div>
                         </div>
                         <div class="featured_container">
                             <div class="row">
                                 <div class="col-lg-6 featured_col">
+
+
                                     <div class="featured_content">
-                                        <div class="featured_header d-flex flex-row align-items-center justify-content-start">
-                                            <div class="featured_tag"><a href="#">Featured</a></div>
-                                            <div class="featured_price ml-auto">Price: <span>Free</span></div>
+                                        <div
+                                            class="featured_header d-flex flex-row align-items-center justify-content-start">
+                                            <div class="featured_tag"><a href="#"><%= featured.category %></a></div>
+                                            <div class="featured_price ml-auto"><%= featured.type %></div>
                                         </div>
                                         <div class="featured_title">
-                                            <h3><a href="courses.html">Online Literature Course</a></h3>
+                                            <h3><a href="courses.html"><%= featured.title %></a></h3>
                                         </div>
-                                        <div class="featured_text">Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar. Donec vehicula efficitur nibh, in pretium nulla interdum non.</div>
+                                        <div class="featured_text"><%= featured.summary %></div>
                                         <div class="featured_footer d-flex align-items-center justify-content-start">
-                                            <div class="featured_author_image"><img src="images/featured_author.jpg" alt=""></div>
-                                            <div class="featured_author_name">By <a href="#">James S. Morrison</a></div>
-                                            <div class="featured_sales ml-auto">3 weeks</div>
+                                            <div class="featured_author_image"><img src="images/featured_author.jpg"
+                                                    alt=""></div>
+                                            <div class="featured_author_name">By <a href="#"><%= featured.author %></a></div>
+                                            <div class="featured_sales ml-auto"><%= featured.duration %></div>
                                         </div>
                                     </div>
+
                                 </div>
                                 <div class="col-lg-6 featured_col">
-                                    <!-- Background image artist https://unsplash.com/@jtylernix -->
-                                    <div class="featured_background" style="background-image:url(images/featured.jpg)"></div>
+                                  
+                                    <div class="featured_background" style="background-image:url( <%= featured.image %> )">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -290,16 +306,20 @@
                         <div class="section_title text-center">
                             <h2>Find a course</h2>
                         </div>
-                        <div class="section_subtitle">Quickly search from our large deposit of Topics and choose a topic of your choice</div>
+                        <div class="section_subtitle">Quickly search from our large deposit of Topics and choose a topic
+                            of your choice</div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
                         <div class="course_search">
-                            <form action="#" class="course_search_form d-flex flex-md-row flex-column align-items-center justify-content-between">
-                                <div><input type="text" class="course_input" placeholder="Topic" required="required"></div>
+                            <form action="#"
+                                class="course_search_form d-flex flex-md-row flex-column align-items-center justify-content-between">
+                                <div><input type="text" class="course_input" placeholder="Topic" required="required">
+                                </div>
                                 <!-- <div><input type="text" class="course_input" placeholder="Level" required="required"></div> -->
-                                <button class="course_button"><span>search course</span><span class="button_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></button>
+                                <button class="course_button"><span>search course</span><span class="button_arrow"><i
+                                            class="fa fa-angle-right" aria-hidden="true"></i></span></button>
                             </form>
                         </div>
                     </div>
@@ -308,80 +328,48 @@
                     <div class="col">
 
                         <!-- Courses Slider -->
+
                         <div class="courses_slider_container">
                             <div class="owl-carousel owl-theme courses_slider">
-
-                                <!-- Slider Item -->
+                                <% for (var i = free.length - 1; i >= 0; --i) { %>
                                 <div class="owl-item">
                                     <div class="course">
-                                        <div class="course_image"><img src="images/course_1.jpg" alt=""></div>
+                                        <div class="course_image"><img src="<%= free[i].image %>"
+                                                alt="<%= free[i].name %>" height="299px" width="s385px"> </div>
                                         <div class="course_body">
-                                            <div class="course_header d-flex flex-row align-items-center justify-content-start">
-                                                <div class="course_tag"><a href="#">Featured</a></div>
-                                                <div class="course_price ml-auto">Price: <span>$35</span></div>
+                                            <div
+                                                class="course_header d-flex flex-row align-items-center justify-content-start">
+                                                <div class="course_tag"><a href="#"><%= free[i].category %></a></div>
+                                                <div class="course_price ml-auto"><span>
+                                                        <%= free[i].duration %>
+                                                    </span></div>
                                             </div>
                                             <div class="course_title">
-                                                <h3><a href="courses.html">Online Literature Course</a></h3>
+                                                <h3><a href="courses.html"></a>
+                                                    <%= free[i].topic_title %>
+                                                    </a></h3>
                                             </div>
-                                            <div class="course_text">Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.</div>
+                                            <div class="course_text">
+                                                <p>
+                                                    <%= free[i].summary %>
+                                                </p>
+                                            </div>
                                             <div class="course_footer d-flex align-items-center justify-content-start">
-                                                <div class="course_author_image"><img src="images/featured_author.jpg" alt="https://unsplash.com/@anthonytran"></div>
-                                                <div class="course_author_name">By <a href="#">James S. Morrison</a></div>
-                                                <div class="course_sales ml-auto"><span>352</span> Sales</div>
+                                                <!-- <div class="course_author_image"><img src="images/featured_author.jpg"
+                                                                    alt="https://unsplash.com/@anthonytran"></div> -->
+                                                <div class="course_author_name bold">By <a
+                                                        href="#"><%= free[i].author %></a></div>
+                                                <div class="course_sales ml-auto"><%= free[i].type %></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- Slider Item -->
-                                <div class="owl-item">
-                                    <div class="course">
-                                        <div class="course_image"><img src="images/course_2.jpg" alt=""></div>
-                                        <div class="course_body">
-                                            <div class="course_header d-flex flex-row align-items-center justify-content-start">
-                                                <div class="course_tag"><a href="#">New</a></div>
-                                                <div class="course_price ml-auto">Price: <span>$35</span></div>
-                                            </div>
-                                            <div class="course_title">
-                                                <h3><a href="courses.html">Social Media Course</a></h3>
-                                            </div>
-                                            <div class="course_text">Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.</div>
-                                            <div class="course_footer d-flex align-items-center justify-content-start">
-                                                <div class="course_author_image"><img src="images/course_author_2.jpg" alt=""></div>
-                                                <div class="course_author_name">By <a href="#">Mark Smith</a></div>
-                                                <div class="course_sales ml-auto"><span>352</span> Sales</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Slider Item -->
-                                <div class="owl-item">
-                                    <div class="course">
-                                        <div class="course_image"><img src="images/course_3.jpg" alt="https://unsplash.com/@annademy"></div>
-                                        <div class="course_body">
-                                            <div class="course_header d-flex flex-row align-items-center justify-content-start">
-                                                <div class="course_tag"><a href="#">Featured</a></div>
-                                                <div class="course_price ml-auto">Price: <span>$35</span></div>
-                                            </div>
-                                            <div class="course_title">
-                                                <h3><a href="courses.html">Marketing Course</a></h3>
-                                            </div>
-                                            <div class="course_text">Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.</div>
-                                            <div class="course_footer d-flex align-items-center justify-content-start">
-                                                <div class="course_author_image"><img src="images/course_author_3.jpg" alt=""></div>
-                                                <div class="course_author_name">By <a href="#">Julia Williams</a></div>
-                                                <div class="course_sales ml-auto"><span>352</span> Sales</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <% }%>
 
                             </div>
 
-                            <!-- Courses Slider Nav -->
-                            <div class="courses_slider_nav courses_slider_prev trans_200"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
-                            <div class="courses_slider_nav courses_slider_next trans_200"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+
+
 
                         </div>
                     </div>
@@ -392,7 +380,8 @@
         <!-- Milestones -->
 
         <div class="milestones">
-            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/milestones.jpg" data-speed="0.8"></div>
+            <div class="parallax_background parallax-window" data-parallax="scroll"
+                data-image-src="images/milestones.jpg" data-speed="0.8"></div>
             <div class="container">
                 <div class="row milestones_container">
 
@@ -454,7 +443,9 @@
                                 </div>
                                 <div class="accordion_panel">
                                     <div>
-                                        <p>Ever imagined getting a first hand training by the qualified and experienced Teachers on a platform structured to give the best possible experience and learning speed? Thats us, Get trained by the best teachers
+                                        <p>Ever imagined getting a first hand training by the qualified and experienced
+                                            Teachers on a platform structured to give the best possible experience and
+                                            learning speed? Thats us, Get trained by the best teachers
                                             on our advanced platform .</p>
                                     </div>
                                 </div>
@@ -466,7 +457,9 @@
                                 </div>
                                 <div class="accordion_panel">
                                     <div>
-                                        <p>We have helped scores of students improve their skills across a wide range, from the automotive to the retail and hospitality sectors. With the latest tools and our dedicated and experienced team, we have the best
+                                        <p>We have helped scores of students improve their skills across a wide range,
+                                            from the automotive to the retail and hospitality sectors. With the latest
+                                            tools and our dedicated and experienced team, we have the best
                                             methods in the field to help you quickly improve your skills.</p>
                                     </div>
                                 </div>
@@ -478,7 +471,9 @@
                                 </div>
                                 <div class="accordion_panel">
                                     <div>
-                                        <p>All the members of our team are passionate about their work and always ready to help. We all enjoy Learning and believe that there should be no barrier to learning, so focus on bringing out the fun iin learning.</p>
+                                        <p>All the members of our team are passionate about their work and always ready
+                                            to help. We all enjoy Learning and believe that there should be no barrier
+                                            to learning, so focus on bringing out the fun iin learning.</p>
                                     </div>
                                 </div>
                             </div>
@@ -489,7 +484,9 @@
                                 </div>
                                 <div class="accordion_panel">
                                     <div>
-                                        <p>Wherever you need us, we are always there for you. You can easily contact us on e-mail or by phone, subscribe to our newsletter or follow us on Facebook and other social media platforms. We are happy to have you
+                                        <p>Wherever you need us, we are always there for you. You can easily contact us
+                                            on e-mail or by phone, subscribe to our newsletter or follow us on Facebook
+                                            and other social media platforms. We are happy to have you
                                             as a part of our community.</p>
                                     </div>
                                 </div>
@@ -512,8 +509,9 @@
                         <div class="video_container_outer">
                             <div class="video_container">
 
-                                <video id="vid1" class="video-js vjs-default-skin" controls data-setup='{ "poster": "images/video.jpg", "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://youtu.be/5_MRXyYjHDk"}], "youtube": { "iv_load_policy": 1 } }'>
-							</video>
+                                <video id="vid1" class="video-js vjs-default-skin" controls
+                                    data-setup='{ "poster": "images/video.jpg", "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://youtu.be/5_MRXyYjHDk"}], "youtube": { "iv_load_policy": 1 } }'>
+                                </video>
                             </div>
                         </div>
                     </div>
@@ -530,11 +528,13 @@
                         <div class="section_title text-center">
                             <h2>Start Learning Today</h2>
                         </div>
-                        <div class="section_subtitle">Create an account today and start learning online with us for free</div>
+                        <div class="section_subtitle">Create an account today and start learning online with us for free
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="button join_button"><a href="/register">register now<div class="button_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></div></a></div>
+            <div class="button join_button"><a href="/register">register now<div class="button_arrow"><i
+                            class="fa fa-angle-right" aria-hidden="true"></i></div></a></div>
         </div>
 
         <!-- Footer -->

@@ -1,10 +1,20 @@
 var user = require('../models/user');
+let courses = require('../models/courses')
 
 
 
-exports.homepage = (req, res) => {
-    res.render("index", {})
+
+
+exports.homepage = async (req, res) => {
+    let free = "";
+    let featured = "";
+    free = await courses.find({type: "free"});
+    featured = await courses.findOne({type: "featured"});
+
+    console.log(free)
+    res.render("index", {free, featured,})
 };
+
 
 exports.login = (req, res) => {
     let loginError = req.flash('loginError');
