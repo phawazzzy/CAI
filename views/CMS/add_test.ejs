@@ -29,10 +29,10 @@
                                     <!-- <div class="col-md-12"> -->
                                     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                                         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-5 pb-2 mb-3">
-                                            <h1 class="h2 rw"><span class="text-info">add new topics</span></h1>
+                                            <h1 class="h2 rw"><span class="text-info">add new question</span></h1>
                                         </div>
                                         <!-- FORM -->
-                                        <form action="/add_topic" method="post" class="col-lg-10 col-md-10 col-sm-10 col-xs-10" enctype="multipart/form-data">
+                                        <form action="/add_test" method="POST" class="col-lg-10 col-md-10 col-sm-10 col-xs-10" enctype="multipart/form-data">
                                             <!-- INPUT FOR TOPIC TITLE -->
                                             <div class="form-group row">
                                                 <label for="topic title" class="col-sm-2 col-form-label">topic title</label>
@@ -43,52 +43,80 @@
                                             <!-- END OF INPUT FOR TOPIC TITLE -->
                                             <hr class="my-4" />
 
-                                            <!-- input image on topic -->
-                                            <div class="form-group row">
-                                                <label for="topic image" class="col-sm-2 col-form-label">topic's image</label>
-                                                <div class="col-sm-10">
-                                                    <input type="file" class="form-control" name="image">
 
-                                                    <img src="" class="p-2 mt-2" height='50px' />
-                                                    <!-- <a href="">Click to Preview current image </a> -->
-                                                </div>
-                                            </div>
-                                            <!-- end of input image  on topic -->
-                                            <hr class="my-4" />
-
-                                            <!-- input author -->
+                                            <!-- input question -->
                                             <div class="form-group row">
-                                                <label for="author" class="col-sm-2 col-form-label">Author</label>
+                                                <label for="author" class="col-sm-2 col-form-label">Question</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="" name="author" placeholder="author" value="">
-                                                </div>
-                                            </div>
-                                            <!-- end of input author -->
-                                            <hr class="my-4" />
-
-                                            <!-- input summary content -->
-                                            <div class="form-group row">
-                                                <label for="summary" class="col-sm-2 col-form-label">summary</label>
-                                                <div class="col-sm-10">
-                                                    <textarea name="summary" class="form-control" id="" cols="30" rows="5">
+                                                    <textarea name="question" class="form-control" id="" cols="30" rows="5" placeholder="question">
                                                         
-                                                    </textarea>
-                                                </div>
-                                            </div>
-                                            <!-- end of summary content -->
-                                            <hr class="my-4" />
-
-                                            <!-- input topic content -->
-                                            <div class="form-group row">
-                                                <label for="content" class="col-sm-2 col-form-label">content</label>
-                                                <div class="col-sm-10">
-                                                    <textarea name="content" class="form-control" id="" cols="30" rows="5">
-                                                            
                                                         </textarea>
                                                 </div>
                                             </div>
-                                            <!-- end of topic content -->
+                                            <!-- end of input question -->
                                             <hr class="my-4" />
+
+                                            <!-- input soption 1 -->
+                                            <div class="form-group row">
+                                                <label for="option1" class="col-sm-2 col-form-label">option 1</label>
+                                                <div class="col-sm-10">
+
+                                                    <input type="text" class="form-control" id="" name="chioces" placeholder="option1" value="">
+
+                                                </div>
+                                            </div>
+                                            <!-- end of option 1 -->
+                                            <hr class="my-4" />
+                                            <!-- input option 2 -->
+                                            <div class="form-group row">
+                                                <label for="option2" class="col-sm-2 col-form-label">option 2</label>
+                                                <div class="col-sm-10">
+
+                                                    <input type="text" class="form-control" id="" name="chioces" placeholder="option2" value="">
+
+                                                </div>
+                                            </div>
+                                            <!-- end of option 2 -->
+
+                                            <hr class="my-4" />
+
+                                            <!-- input option 3 -->
+                                            <div class="form-group row">
+                                                <label for="option2" class="col-sm-2 col-form-label">option 3</label>
+                                                <div class="col-sm-10">
+
+                                                    <input type="text" class="form-control" id="" name="chioces" placeholder="option3" value="">
+
+                                                </div>
+                                            </div>
+                                            <!-- end of option 3 -->
+
+                                            <hr class="my-4" />
+                                            <!-- input option 4 -->
+                                            <div class="form-group row">
+                                                <label for="option4" class="col-sm-2 col-form-label">option 4</label>
+                                                <div class="col-sm-10">
+
+                                                    <input type="text" class="form-control" id="" name="chioces" placeholder="option4" value="">
+
+                                                </div>
+                                            </div>
+                                            <!-- end of option 4 -->
+
+                                            <hr class="my-4" />
+
+                                            <!-- input correct -->
+                                            <div class="form-group row">
+                                                <label for="correct" class="col-sm-2 col-form-label">correct answer</label>
+                                                <div class="col-sm-10">
+
+                                                    <input type="number" class="form-control" id="" name="correct" placeholder="correct" value="">
+
+                                                </div>
+                                            </div>
+                                            <!-- end of correct -->
+                                            <hr class="my-4" />
+
 
                                             <div class="form-group row d-flex justify-content-between float-left " style="width:100%">
                                                 <div class="">
@@ -113,29 +141,13 @@
                 <!-- SCRIPT -->
                 <%- include('../partials/cmsScript.ejs') %>
                     <!-- END OF SCRIPT -->
-                    <script type="text/javascript">
-                        CKEDITOR.replace("summary", {
+                    <script>
+                        CKEDITOR.replace("question", {
                             toolbar: [{
                                     name: 'basic',
                                     items: ['Font', 'Format', 'FontSize', 'TextColor', 'BGColor', '-', 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'Copy', 'Cut', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Image', '-', 'NumberedList', 'BulletedList']
                                 },
-                                // '/', {
-                                //     name: 'insert',
-                                //     items: ['Link', 'Unlink', 'Outdent', 'Indent', 'SpecialChar', 'InsertPre', 'HorizontalRule', 'PageBreak', '-', 'Image', '-', 'SelectAll', 'RemoveFormat', 'Undo', 'Redo', 'Maximize']
-                                // },
-                            ],
-                            height: 200
-                        });
 
-                        CKEDITOR.replace("content", {
-                            toolbar: [{
-                                    name: 'basic',
-                                    items: ['Font', 'Format', 'FontSize', 'TextColor', 'BGColor', '-', 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'Copy', 'Cut', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Image', '-', 'NumberedList', 'BulletedList']
-                                },
-                                '/', {
-                                    name: 'insert',
-                                    items: ['Link', 'Unlink', 'Outdent', 'Indent', 'SpecialChar', 'InsertPre', 'HorizontalRule', 'PageBreak', '-', 'Image', '-', 'SelectAll', 'RemoveFormat', 'Undo', 'Redo', 'Maximize']
-                                },
                             ],
                             height: 200
                         });

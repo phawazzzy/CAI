@@ -47,5 +47,8 @@ exports.summary = (req, res) => {
 }
 
 exports.coursepage = (req, res) => {
-    res.render("course", {})
-}
+        res.render("course", {})
+    }
+    // exports.takeTest = (req, res) => {
+    //     res.render("taketest", {})
+    // }
