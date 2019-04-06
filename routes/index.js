@@ -32,7 +32,9 @@ router.get('/contact', isLoggedIn, controller.contact)
     // router.get('/add_topic', adminLoggedIn, cms_controller.add_topic);
 router.get('/classroom', controller.classroom);
 router.get("/dashboard", adminLoggedIn, cms_controller.dashboard);
-// router.get("/taketest", isLoggedIn, controller.takeTest)
+router.get('/summary', controller.summary)
+router.get('/course', controller.coursepage)
+    // router.get("/taketest", isLoggedIn, controller.takeTest)
 
 
 // take test route
@@ -180,6 +182,7 @@ router.route("/add_test")
             question: req.body.question,
             choices: req.body.chioces,
             correct: req.body.correct,
+
         };
         if (req.file) {
             pageData.image = `uploads/${req.file.filename}`

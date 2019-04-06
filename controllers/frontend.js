@@ -42,6 +42,7 @@ exports.news = (req, res) => {
     res.render("news", {})
 }
 
-// exports.takeTest = (req, res) => {
-//     res.render("taketest", {})
-// }
+exports.summary = (req, res) => {
+    res.render("summary")
+
+}
