@@ -33,7 +33,7 @@ router.get('/contact', isLoggedIn, controller.contact)
 router.get('/classroom', controller.classroom);
 router.get("/dashboard", adminLoggedIn, cms_controller.dashboard);
 router.get('/summary', controller.summary)
-router.get('/course', controller.coursepage)
+    // router.get('/course/:id', controller.coursepage)
     // router.get("/taketest", isLoggedIn, controller.takeTest)
 
 
@@ -203,7 +203,13 @@ router.route("/add_test")
         res.redirect("/add_test");
     });
 
+// one page render for the courses
 
+router.get("/lessons", async function(req, res, next) {
+    let result = ""
+    result = await Lecture.find({})
+    res.render("lessons", { result })
+})
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
@@ -230,6 +236,14 @@ router.get("/logout", function(req, res) {
 router.get("/adminLogout", function(req, res) {
     req.logout()
     res.redirect("/admin_login");
+})
+
+router.get("/courses/:id", async function(req, res, next) {
+    idd = req.params.id;
+
+    let result = "";
+    result = await courses.findOne({ _id: idd })
+    res.render("course", { result })
 })
 
 

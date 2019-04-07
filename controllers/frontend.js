@@ -1,10 +1,6 @@
 var user = require('../models/user');
 let courses = require('../models/courses')
 
-
-
-
-
 exports.homepage = async (req, res) => {
     let free = "";
     let featured = "";
@@ -35,10 +31,34 @@ exports.about = (req, res) => {
     
 };
 
-exports.courses = (req, res) => {
-    let pagename = "courses";
-    res.render("courses", {pagename, isLoggedIn:req.isAuthenticated()})
+
+exports.courses = async(req, res, next) => {
+    let doc = ""
+    doc = await courses.find({})
+    res.render("courses", { doc, isLoggedIn:req.isAuthenticated() })
 }
+
+exports.coursepage = async(req, res) => {
+    let idd = req.params.id;
+    let result = "";
+
+    result = await courses.findOne({ _id: idd });
+    res.render("course", { result })
+}
+
+// router.get("/lessons", async function(req, res, next){
+//     let result = ""
+//    result = await Lecture.find({})
+//     res.render("lessons", {result})
+//   })
+
+// router.get("/lessons/:id", async function(req, res, next){
+//     let idd = req.params.id;
+//     let result = "";
+
+//     result = await Lecture.findOne({link: idd});  
+//     res.render("template", {result})        
+// })
 
 
 exports.classroom = (req, res) => {
@@ -67,3 +87,31 @@ exports.coursepage = (req, res) => {
     let pagename = "coursepage";
     res.render("course", {pagename, isLoggedIn:req.isAuthenticated()})
 }
+
+
+
+
+
+// exports.renderPage = function(req, res) {
+//     let navIndex = req.path.substr(1);
+//     if (typeof f[navIndex] === "undefined") {
+//         (async() => {
+//             const news = await allNews;
+
+//             res.render("frontend/404", { activeNav: "", navIndex, doc: news });
+//         })();
+//     } else {
+//         let thisPage = f[navIndex].data;
+//         let activeNav = f[navIndex].nav;
+//         (async() => {
+//             let pageData = Page.find({ tag: thisPage });
+
+//             const [dt, news, ptn] =
+//             await Promise.all(
+//                 [pageData, allNews, allPartners]
+//             );
+
+//             res.render("frontend/template", { content: dt[0], doc: news, title: navIndex.replace(/(-)+/gi, " ").toUpperCase(), activeNav, partners: ptn });
+//         })();
+//     }
+// };
