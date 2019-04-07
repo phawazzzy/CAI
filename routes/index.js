@@ -139,6 +139,11 @@ router.route("/add_topic")
             summary: req.body.summary,
             content: req.body.content,
             author: req.body.author,
+            type: req.body.type,
+            duration: req.body.duration,
+            question: req.body.question,
+            choices: req.body.choices,
+            correct: req.body.correct,
         };
         if (req.file) {
             pageData.image = `uploads/${req.file.filename}`
