@@ -177,8 +177,6 @@ img {
     width: auto;
     height: 432px;
     margin-top: 70px;
-    /* background-image: url("https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca711bb3977267b61f0865d_heropage.jpg"); */
-    /* background-image: url("<%- result.image%>"); */
     background-position: 0px 0px;
     background-size: cover;
 }

@@ -37,13 +37,7 @@ router.get('/summary', controller.summary)
     // router.get("/taketest", isLoggedIn, controller.takeTest)
 
 
-// take test route
-router.get('/tests/historyofcomputers', function(req, res, next) {
-    test.find({}).then(function(result) {
-        console.log(result)
-        res.render("taketest", { result });
-    })
-})
+
 
 
 // HANDLE IMAGES
@@ -202,11 +196,11 @@ router.route("/add_test")
 
 // one page render for the courses
 
-router.get("/lessons", async function(req, res, next) {
-    let result = ""
-    result = await Lecture.find({})
-    res.render("lessons", { result })
-})
+// router.get("/lessons", async function(req, res, next) {
+//     let result = ""
+//     result = await Lecture.find({})
+//     res.render("lessons", { result })
+// })
 
 
 
@@ -240,13 +234,22 @@ router.get("/adminLogout", function(req, res) {
 
 router.get("/courses/:id", async function(req, res, next) {
     idd = req.params.id;
+    iddd = req.params.id;
 
     let result = "";
+    let quiz = ""
     result = await courses.findOne({ _id: idd })
-    res.render("course", { result })
+    quiz = await test.findOne({ _id: iddd })
+    res.render("course", { result, quiz })
 })
 
-
+// take test route
+// router.get('/tests/historyofcomputers', function(req, res, next) {
+//     test.find({}).then(function(result) {
+//         console.log(result)
+//         res.render("taketest", { result });
+//     })
+// })
 
 
 
