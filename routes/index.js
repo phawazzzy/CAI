@@ -244,12 +244,12 @@ router.get("/courses/:id", async function(req, res, next) {
 })
 
 // take test route
-// router.get('/tests/historyofcomputers', function(req, res, next) {
-//     test.find({}).then(function(result) {
-//         console.log(result)
-//         res.render("taketest", { result });
-//     })
-// })
+router.get('/tests/historyofcomputers', function(req, res, next) {
+    test.find({}).then(function(result) {
+        console.log(result)
+        res.render("taketest", { result });
+    })
+})
 
 
 
