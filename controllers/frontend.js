@@ -35,7 +35,8 @@ exports.about = (req, res) => {
 exports.courses = async(req, res, next) => {
     let doc = ""
     doc = await courses.find({})
-    res.render("courses", { doc, isLoggedIn:req.isAuthenticated() })
+    pagename = courses;
+    res.render("courses", { doc, pagename, isLoggedIn:req.isAuthenticated() })
 }
 
 exports.coursepage = async(req, res) => {
