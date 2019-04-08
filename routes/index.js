@@ -139,10 +139,11 @@ router.route("/add_topic")
             summary: req.body.summary,
             content: req.body.content,
             author: req.body.author,
+            category: req.body.category,
             type: req.body.type,
             duration: req.body.duration,
             question: req.body.question,
-            choices: req.body.choices,
+            choices: req.body.chioces,
             correct: req.body.correct,
         };
         if (req.file) {
@@ -219,7 +220,7 @@ function isLoggedIn(req, res, next) {
 }
 
 function adminLoggedIn(req, res, next) {
-    if (req.isAuthenticated()) {
+    if (req.isAuthenticated() && req.user.role == "admin") {
         return next()
     }
 

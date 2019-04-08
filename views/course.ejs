@@ -54,16 +54,17 @@
                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                     <!-- quiz section -->
 
-                    <!-- <div class="row">
+                    <div class="row">
                         <div class="col-lg-2"></div>
                         <div class="col-lg-8" style="background:white; margin-top: 80px;height: 400px">
                             <h1 class="score"></h1>
-                            <div class="header">
+                            <!-- <div class="header">
                                 <center>
                                     <h1 class="btn btn-primary questionNumber" style="padding-top:5px; width:400px; height: 60px; background:#82A608; font-size:2em; color:white; border-color:white">
                                     </h1>
-                            </div>
-                            </center>
+                                </center>
+                                
+                            </div> -->
                             <div class="row">
                                 <div class="col-lg-1"></div>
                                 <div class="col-lg-10">
@@ -82,18 +83,18 @@
                                     <input type="radio" name="radioChoice"> <label></label><br><br>
                                     <div class="row">
                                         <div class="col-lg-6">
-                                            <div class="button"><button type="button" class="btn btn-primary" style="padding-top:5px; width:100px; height: 40px; background:#82A608; font-size:1em; color:white; border-color:white" onclick="next()">Next</button></div>
+                                            <div class="button"><button type="button" class="btn btn-primary" style="padding-top:5px; width:100px; height: 40px; background:#82A608; font-size:1em; color:white; border-color:white" onclick="back()">Back</button></div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="button">
-                                                <center><button class="btn btn-primary" style="padding-top:5px; width:100px; height: 40px; background:#82A608; font-size:1em; color:white; border-color:white" type="button" onclick="back()">Back</button></center>
+                                                <center><button class="btn btn-primary" style="padding-top:5px; width:100px; height: 40px; background:#82A608; font-size:1em; color:white; border-color:white" type="button" onclick="next()">Next</button></center>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </form>
                         </div>
-                    </div> -->
+                    </div>
                     <!-- end of quiz section -->
                 </div>
                 <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
@@ -119,7 +120,7 @@
 
             <!-- script for the quiz -->
 
-            <!-- <script>
+            <script>
                 document.onkeydown = function(e) {
                     if (event.keyCode == 123) {
                         return false;
@@ -216,7 +217,7 @@
 
                 var hash = bcrypt.hashSync("love");
                 console.log(hash)
-            </script> -->
+            </script>
             <!-- end of quiz for the quiz -->
 
 </body>
