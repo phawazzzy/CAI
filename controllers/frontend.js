@@ -14,7 +14,7 @@ exports.homepage = async(req, res) => {
     let pagename = "home";
 
     console.log(free)
-    res.render("index", { free, featured, pagename, isLoggedIn: req.isAuthenticated() })
+    res.render("index", { free, featured, pagename })
 };
 
 
@@ -31,39 +31,39 @@ exports.register = (req, res) => {
 }
 exports.about = (req, res) => {
     let pagename = "about";
-    res.render("about", { pagename, isLoggedIn: req.isAuthenticated() });
+    res.render("about", { pagename });
 
 };
 
 exports.courses = (req, res) => {
     let pagename = "courses";
-    res.render("courses", { pagename, isLoggedIn: req.isAuthenticated() })
+    res.render("courses", { pagename })
 }
 
 
 exports.classroom = (req, res) => {
     let pagename = "classroom";
-    res.render("classroom", { pagename, isLoggedIn: req.isAuthenticated() })
+    res.render("classroom", { pagename })
 }
 
 exports.topic = (req, res) => {
     let pagename = "topic";
-    res.render("CMS/topic", { pagename, isLoggedIn: req.isAuthenticated() })
+    res.render("CMS/topic", { pagename })
 }
 
 exports.contact = (req, res) => {
     let pagename = "contact";
-    res.render("contact", { pagename, user: req.user, isLoggedIn: req.isAuthenticated() })
+    res.render("contact", { pagename, user: req.user })
     console.log(req.isAuthenticated())
 }
 
 
 exports.summary = (req, res) => {
     let pagename = "summary";
-    res.render("summary", { pagename, isLoggedIn: req.isAuthenticated() })
+    res.render("summary", { pagename })
 }
 
 exports.coursepage = (req, res) => {
     let pagename = "coursepage";
-    res.render("course", { pagename, isLoggedIn: req.isAuthenticated() })
+    res.render("course", { pagename })
 }

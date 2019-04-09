@@ -21,6 +21,9 @@ var user = require('../models/user');
 
 /* GET home page. */
 router.get('/', controller.homepage);
+// router.get('/', (req, res, next) => {
+//     res.render('index')
+// })
 router.get('/login', controller.login);
 router.get('/register', controller.register);
 router.get('/admin_register', cms_controller.admin_register);
