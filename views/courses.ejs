@@ -120,8 +120,12 @@
                                         <div class="course_image"><img src="<%- doc[i].image %>" alt=""></div>
                                         <div class="course_body">
                                             <div class="course_header d-flex flex-row align-items-center justify-content-start">
-                                                <div class="course_tag"><a href="#">Featured</a></div>
-                                                <div class="course_price ml-auto">Price: <span>$35</span></div>
+                                                <div class="course_tag">
+                                                    <a href="#">
+                                                        <%-doc[i].type%>
+                                                    </a>
+                                                </div>
+                                                <div class="course_price ml-auto">Price: <span><%-doc[i].type%></span></div>
                                             </div>
                                             <div class="course_title">
                                                 <h3>

@@ -46,7 +46,7 @@
                                     
                             </form> -->
 
-                            <span class=""><%= existence %> </span>
+                            <span class=""><%#= existence %> </span>
                             <form action="/register/students" method="post">
                                 <input id="first-name" class="text-field w-input" type="text" name="name" placeholder="name" required>
                                 <input id="first-name" class="text-field-2 w-input" type="text" name="email" placeholder="Email" required>
@@ -64,7 +64,14 @@
             </div>
         </div>
     </div>
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        if ('<%= existence %>') {
+            swal({
+                text: "<%= existence %>"
+            })
+        }
+    </script>
 </body>
 
 </html>
