@@ -35,10 +35,29 @@ exports.about = (req, res) => {
 
 };
 
-exports.courses = (req, res) => {
+// exports.courses = (req, res) => {
+//     let pagename = "courses";
+//     res.render("courses", { pagename })
+// }
+
+exports.courses = async(req, res, next) => {
+    let doc = ""
+    doc = await courses.find({})
     let pagename = "courses";
-    res.render("courses", { pagename })
+
+    res.render("courses", { doc, pagename })
+
 }
+
+// exports.coursepage = async(req, res) => {
+//     let idd = req.params.id;
+//     let result = "";
+
+//     result = await courses.findOne({ _id: idd });
+//     res.render("course", { result })
+// }
+
+
 
 
 exports.classroom = (req, res) => {
@@ -51,19 +70,20 @@ exports.topic = (req, res) => {
     res.render("CMS/topic", { pagename })
 }
 
+
 exports.contact = (req, res) => {
     let pagename = "contact";
-    res.render("contact", { pagename, user: req.user })
-    console.log(req.isAuthenticated())
+    res.render("contact", { pagename })
 }
 
 
 exports.summary = (req, res) => {
+
     let pagename = "summary";
     res.render("summary", { pagename })
 }
 
-exports.coursepage = (req, res) => {
-    let pagename = "coursepage";
-    res.render("course", { pagename })
-}
+// exports.coursepage = (req, res) => {
+//     let pagename = "coursepage";
+//     res.render("course", { pagename })
+// }

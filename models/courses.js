@@ -14,7 +14,6 @@ let courseSchema = new Schema({
     category: { type: String },
     type: { type: String },
     duration: { type: String },
-
     createdDate: {
         type: Date,
         default: Date.now()
