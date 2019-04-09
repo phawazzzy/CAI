@@ -14,9 +14,7 @@ let courseSchema = new Schema({
     category: { type: String },
     type: { type: String },
     duration: { type: String },
-    question: String,
-    choices: Array,
-    correct: Number,
+    test: { type: mongoose.Schema.Types.ObjectId, ref: 'test' },
     createdDate: {
         type: Date,
         default: Date.now()

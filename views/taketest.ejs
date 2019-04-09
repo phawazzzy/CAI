@@ -9,7 +9,7 @@
     <title>History of Computers</title>
 </head>
 
-<body oncontextmenu="return false;" style="background: #EDEDED">
+<body style="background: #EDEDED">
     <div class="row">
         <div class="col-lg-2"></div>
         <div class="col-lg-8" style="background:white; margin-top: 80px;height: 400px">
@@ -79,6 +79,7 @@
         ready(choices);
 
         var content = <%-JSON.stringify(result)%>;
+        console.log(content)
 
 
         var x = 0;
@@ -97,7 +98,7 @@
 
             } else {
                 var questionNumber = document.querySelector('.questionNumber');
-                questionNumber.textContent = 'Question#' + y;
+                questionNumber.textContent = y;
 
                 var question = document.querySelector('.question');
                 question.textContent = content[x]['question'];

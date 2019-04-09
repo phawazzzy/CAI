@@ -142,9 +142,7 @@ router.route("/add_topic")
             category: req.body.category,
             type: req.body.type,
             duration: req.body.duration,
-            question: req.body.question,
-            choices: req.body.chioces,
-            correct: req.body.correct,
+
         };
         if (req.file) {
             pageData.image = `uploads/${req.file.filename}`
@@ -245,7 +243,9 @@ router.get("/courses/:id", async function(req, res, next) {
     let result = "";
     let quiz = ""
     result = await courses.findOne({ _id: idd })
-    quiz = await test.findOne({ _id: iddd })
+    let title = result.topic_title;
+    quiz = await test.find({ topic_title: title })
+    console.log(quiz)
     res.render("course", { result, quiz })
 })
 
