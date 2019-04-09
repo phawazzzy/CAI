@@ -2,81 +2,85 @@
 <html lang="en">
 
 <head>
-    <!-- <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title> -->
+    <title>Courses</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Elearn project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="plugins/video-js/video-js.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="styles/courses.css">
+    <link rel="stylesheet" type="text/css" href="styles/courses_responsive.css">
+    <link rel="shortcut icon" href="images/molecule.png" type="image/png">
     <%- include('../partials/cmsHead.ejs') %>
 
 </head>
 
-<body class="animsition">
-    <div class="page-wrapper">
+<body>
         <%- include('../partials/sideNav.ejs') %>
 
-            <%- include('../partials/cmsHeader.ejs') %>
+        <%- include('../partials/cmsHeader.ejs') %>
 
-                <!-- MAIN CONTENT -->
-                <div class="main-content">
-                    <div class="section__content section__content--p30">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-
-                                    <div class="col-lg-12 col-nd-12 col-sm-12 col-xs-12 px-0">
-                                        <a href="/add_topic" class="btn btn-primary">Create New topic <span class="fa fa-plus-circle"></span></a>
-                                    </div>
-
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-5 pb-2 mb-3">
-                                                <h1 class="h2 rw"><span class="text-info">list of topics</span></h1>
-                                            </div>
-                                        </div>
-
-                                        <div class="col card-deck mt-3 pl-2">
-                                            <% for (var i = doc.length - 1; i >= 0; --i) { %>
-
-                                                <div class="col-sm-4 col-xs-12 px-2">
-                                                    <div class="border mb-4 mx-1 px-0">
-                                                        <div class="card-header text-center d-flex">
-                                                            <b> <%= doc[i].topic_title %></b>
-                                                        </div>
-                                                        <div class="card-body text-center pb-1">
-                                                            <img src="<%= doc[i].image %>" alt="<%= doc[i].name %>" class="img-fluid p-2">
-                                                            <hr class="my-4" />
-                                                            <div class="text-center pb-1">
-                                                                <p>
-                                                                    <%= doc[i].content %>
-                                                                        <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dicta sequi aut quae. Nesciunt delectus magnam blanditiis quo vitae eveniet tenetur adipisci iusto earum. Consequuntur, dignissimos. Ab vel autem corporis? -->
-
-                                                                </p>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="card-footer justify-content-center d-flex">
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <% }%>
-
-                                        </div>
-                                    </div>
-
-                                </main>
-                            </div>
+    <div class="super_container">
+           
+        <div>
+            <div class="container" style="margin-left:300px;margin-top: 120px;">
+                    <div style="
+                    margin-bottom: 50px;">
+                            <a href="/add_topic" class="btn btn-primary">Create New topic <span class="fa fa-plus-circle"></span></a>
                         </div>
-                    </div>
-                    <!-- END OF MAIN CONTENT -->
+                    <span>All Courses</span>
+                    <hr>
+                <!-- All Courses -->
+                <div class="row col-lg-8">
+
+                    <!-- Course -->
+                    <% for (var i = doc.length - 1; i >= 0; --i) { %>
+                        <div class="col-lg-6 col-md-8">
+                                <div class="course">
+                                    <div class="course_image"><img src="<%= doc[i].image %>" alt="<%= doc[i].name %>"
+                                            height="299px" width="s385px"> </div>
+                                    <div class="course_body">
+                                        <div class="course_header d-flex flex-row align-items-center justify-content-start">
+                                            <div class="course_tag"><a href="#"><%= doc[i].category %></a></div>
+                                            <div class="course_price ml-auto"><span>
+                                                    <%= doc[i].duration %>
+                                                </span></div>
+                                        </div>
+                                        <div class="course_title">
+                                            <h3><a href="courses.html"></a>
+                                                <%= doc[i].topic_title %>
+                                                </a></h3>
+                                        </div>
+                                        <div class="course_text">
+                                            <p>
+                                                <%= doc[i].summary %>
+                                            </p>
+                                        </div>
+                                        <div class="course_footer d-flex align-items-center justify-content-start">
+                                            <!-- <div class="course_author_image"><img src="images/featured_author.jpg"
+                                                                alt="https://unsplash.com/@anthonytran"></div> -->
+                                            <div class="course_author_name bold">By <a href="#"><%= doc[i].author %></a></div>
+                                            <div class="course_sales ml-auto"><%= doc[i].type %></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    <% }%>
 
 
                 </div>
-    </div>
-    <!-- SCRIPT -->
-    <%- include('../partials/cmsScript.ejs') %>
-        <!-- END OF SCRIPT -->
+            </div>
 
+
+        </div>
+    </div>
+
+    </div>
+     <!-- SCRIPT -->
+     <%- include('../partials/cmsScript.ejs') %>
+     <!-- END OF SCRIPT -->
 </body>
 
 </html>

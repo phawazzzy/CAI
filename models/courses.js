@@ -11,6 +11,10 @@ let courseSchema = new Schema({
     image: { type: String },
     summary: { type: String },
     content: { type: String },
+    category: { type: String },
+    type: { type: String },
+    duration: { type: String },
+
     createdDate: {
         type: Date,
         default: Date.now()

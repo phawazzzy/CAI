@@ -1,9 +1,42 @@
-<!-- Header -->
-
 <header class="header">
+
+    <!-- Top Bar -->
+    <div class="top_bar">
+        <div class="top_bar_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="top_bar_content d-flex flex-row align-items-center justify-content-start">
+                            <ul class="top_bar_contact_list">
+                                <li>
+                                    <div class="question">Have any questions?</div>
+                                </li>
+                                <li>
+                                    <div><a href="tel: 07010856952">07010856952</a></div>
+                                </li>
+                                <li>
+                                    <div><a href="info@lasucai.com">info@lasucai.com</a></div>
+                                </li>
+                            </ul>
+                            <div class="top_bar_login ml-auto">
+
+                                <ul>
+                                    <% if (pagename == "home") { %>
+                                        <li><a href="/register">Register</a></li>
+                                        <li><a href="/login">Login</a></li>
+                                        <%}else{ %>
+                                            <li><a href="/logout">Logout</a></li>
+                                            <%}%>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Header Content -->
-
-
     <div class="header_container">
         <div class="container">
             <div class="row">
@@ -12,17 +45,22 @@
                         <div class="logo_container">
                             <a href="/">
                                 <div class="logo_content d-flex flex-row align-items-end justify-content-start">
-                                    <div class="logo_img"><img src="images/molecule.png" width="50px" alt=""></div>
+                                    <div class="logo_img"><img src="images/molecule.png" width="50px" alt="">
+                                    </div>
                                     <div class="logo_text">C<b>A</b>I</div>
                                 </div>
                             </a>
                         </div>
                         <nav class="main_nav_contaner ml-auto">
                             <ul class="main_nav">
-                                <li class="active"><a href="/">home</a></li>
-                                <li><a href="/about">about us</a></li>
-                                <li><a href="/courses">courses</a></li>
-                                <li><a href="/contact">contact</a></li>
+
+                                <li class=" <%= (pagename == 'home') ? 'active' : '' %>"> <a href="/">home</a></li>
+                                <li class=" <%= (pagename == 'about' ) ? 'active' : '' %>"><a href="/about">about
+                                            us</a>
+                                </li>
+                                <li class=" <%= (pagename == 'courses') ? 'active' : '' %>"><a href="/courses">courses</a></li>
+
+                                <li class=" <%= (pagename == 'contact') ? 'active' : '' %>"><a href="/contact">contact</a></li>
                             </ul>
                             <div class="search_button"><i class="fa fa-search" aria-hidden="true"></i></div>
 
@@ -71,8 +109,8 @@
         <form action="#" class="header_search_form menu_mm">
             <input type="search" class="search_input menu_mm" placeholder="Search" required="required">
             <button class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
-                        <i class="fa fa-search menu_mm" aria-hidden="true"></i>
-                    </button>
+                <i class="fa fa-search menu_mm" aria-hidden="true"></i>
+            </button>
         </form>
     </div>
     <nav class="menu_nav">

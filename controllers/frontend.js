@@ -1,10 +1,22 @@
 var user = require('../models/user');
+let courses = require('../models/courses')
 
 
 
-exports.homepage = (req, res) => {
-    res.render("index", {})
+
+
+exports.homepage = async(req, res) => {
+    let free = "";
+    let featured = "";
+    free = await courses.find({ type: "free" });
+    featured = await courses.findOne({ type: "featured" });
+
+    let pagename = "home";
+
+    console.log(free)
+    res.render("index", { free, featured, pagename })
 };
+
 
 exports.login = (req, res) => {
     let loginError = req.flash('loginError');
@@ -18,25 +30,40 @@ exports.register = (req, res) => {
 
 }
 exports.about = (req, res) => {
-    res.render("about", {});
+    let pagename = "about";
+    res.render("about", { pagename });
+
 };
 
 exports.courses = (req, res) => {
-    res.render("courses", {})
+    let pagename = "courses";
+    res.render("courses", { pagename })
 }
 
 
 exports.classroom = (req, res) => {
-    res.render("classroom", {})
+    let pagename = "classroom";
+    res.render("classroom", { pagename })
 }
 
 exports.topic = (req, res) => {
-    res.render("CMS/topic", {})
-}
-exports.contact = (req, res) => {
-    res.render("contact", {})
+    let pagename = "topic";
+    res.render("CMS/topic", { pagename })
 }
 
-exports.news = (req, res) => {
-    res.render("news", {})
+exports.contact = (req, res) => {
+    let pagename = "contact";
+    res.render("contact", { pagename, user: req.user })
+    console.log(req.isAuthenticated())
+}
+
+
+exports.summary = (req, res) => {
+    let pagename = "summary";
+    res.render("summary", { pagename })
+}
+
+exports.coursepage = (req, res) => {
+    let pagename = "coursepage";
+    res.render("course", { pagename })
 }

@@ -6,6 +6,8 @@ let cms_controller = require("../controllers/cms");
 var multer = require('multer');
 const async = require("async");
 var courses = require("../models/courses")
+var test = require("../models/test")
+
 const cloudinary = require("cloudinary");
 const cloudinaryStorage = require("multer-storage-cloudinary");
 const path = require("path")
@@ -19,6 +21,9 @@ var user = require('../models/user');
 
 /* GET home page. */
 router.get('/', controller.homepage);
+// router.get('/', (req, res, next) => {
+//     res.render('index')
+// })
 router.get('/login', controller.login);
 router.get('/register', controller.register);
 router.get('/admin_register', cms_controller.admin_register);
@@ -26,11 +31,22 @@ router.get('/admin_login', cms_controller.admin_login);
 router.get('/about', controller.about);
 router.get('/courses', isLoggedIn, controller.courses);
 router.get('/topic', adminLoggedIn, cms_controller.topic);
-router.get('/contact', isLoggedIn, controller.contact);
-// router.get('/add_topic', adminLoggedIn, cms_controller.add_topic);
+router.get('/contact', isLoggedIn, controller.contact)
+    // router.get('/add_topic', adminLoggedIn, cms_controller.add_topic);
 router.get('/classroom', controller.classroom);
 router.get("/dashboard", adminLoggedIn, cms_controller.dashboard);
+router.get('/summary', controller.summary)
+router.get('/course', controller.coursepage)
+    // router.get("/taketest", isLoggedIn, controller.takeTest)
 
+
+// take test route
+router.get('/tests/historyofcomputers', function(req, res, next) {
+    test.find({}).then(function(result) {
+        console.log(result)
+        res.render("taketest", { result });
+    })
+})
 
 
 // HANDLE IMAGES
@@ -132,6 +148,9 @@ router.route("/add_topic")
             summary: req.body.summary,
             content: req.body.content,
             author: req.body.author,
+            category: req.body.category,
+            duration: req.body.duration,
+            type: req.body.type,
         };
         if (req.file) {
             pageData.image = `uploads/${req.file.filename}`
@@ -148,9 +167,44 @@ router.route("/add_topic")
         res.redirect("/topic");
     });
 
-// not using this
+// add test route
 
+router.route("/add_test")
+    .all(adminLoggedIn)
+    .get(function(req, res) {
+        try {
+            // let admin = user.find({ role: "admin" })
+            let username = req.user.name
+            let userEmail = req.user.email
+            res.render("CMS/add_test", { username, userEmail })
+        } catch (err) {
+            showError(req, "GET", "add_test", err);
+            res.redirect("/dashboard");
+        }
+    })
+    .post(upload.single("image"), async function(req, res) {
+        let testData = {
+            topic_title: req.body.topic_title,
+            question: req.body.question,
+            choices: req.body.chioces,
+            correct: req.body.correct,
 
+        };
+        if (req.file) {
+            pageData.image = `uploads/${req.file.filename}`
+                // pageData.publicid = req.file.public_id;
+        }
+
+        try {
+            await test.create(testData);
+            console.log(testData)
+            req.flash("success", "test Creation Successful!");
+        } catch (err) {
+            showError(req, "POST", "/add_test", err);
+        }
+
+        res.redirect("/add_test");
+    });
 
 
 
