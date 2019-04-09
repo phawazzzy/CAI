@@ -165,12 +165,17 @@ router.route("/add_topic")
 
 router.route("/add_test")
     .all(adminLoggedIn)
-    .get(function(req, res) {
+    .get(async function(req, res) {
+
         try {
-            // let admin = user.find({ role: "admin" })
+            let test = ""
+            test = await courses.find({})
+
+
             let username = req.user.name
             let userEmail = req.user.email
-            res.render("CMS/add_test", { username, userEmail })
+            console.log(test)
+            res.render("CMS/add_test", { username, userEmail, test })
         } catch (err) {
             showError(req, "GET", "add_test", err);
             res.redirect("/dashboard");

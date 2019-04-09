@@ -44,7 +44,9 @@ html {
     padding-right: 150px;
     padding-bottom: 50px;
     padding-left: 150px;
-    background-color: #fff;
+    padding-top: 80px;
+    /* background-color: ; */
+    background: url('/images/leaves.png')
 }
 
 a {
