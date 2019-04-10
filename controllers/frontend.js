@@ -6,13 +6,9 @@ exports.homepage = async (req, res) => {
     let featured = "";
     free = await courses.find({type: "free"});
     featured = await courses.findOne({type: "featured"});
-
-    let username = req.user.name
-    let userEmail = req.user.email
     let pagename = "home";
-
-    console.log(free)
-    res.render("index", {free, featured, pagename, isLoggedIn:req.isAuthenticated(), username, userEmail})
+    const authenticated = req.isAuthenticated();
+    res.render("index", {free, featured, pagename, authenticated,})
 };
 
 
@@ -28,10 +24,10 @@ exports.register = (req, res) => {
 
 }
 exports.about = (req, res) => {
-    let pagename = "about";
-    let username = req.user.name
-    let userEmail = req.user.email
-    res.render("about", {pagename, isLoggedIn:req.isAuthenticated(), username, userEmail});
+    let pagename = "about"
+    const authenticated = req.isAuthenticated();
+
+    res.render("about", {pagename, authenticated });
     
 };
 
@@ -39,19 +35,19 @@ exports.about = (req, res) => {
 exports.courses = async(req, res, next) => {
     let doc = ""
     doc = await courses.find({})
-    pagename = courses;
-    let username = req.user.name
-    let userEmail = req.user.email
-    res.render("courses", { doc, pagename, isLoggedIn:req.isAuthenticated(), username, userEmail })
+    pagename =" courses";
+    const authenticated = req.isAuthenticated();
+    
+    res.render("courses", { doc, pagename,authenticated})
 }
 
 exports.coursepage = async(req, res) => {
     let idd = req.params.id;
     let result = "";
-    let username = req.user.name
-    let userEmail = req.user.email
     result = await courses.findOne({ _id: idd });
-    res.render("course", { result, username, userEmail })
+    const authenticated = req.isAuthenticated();
+
+    res.render("course", { result, authenticated, authenticated })
 }
 
 // router.get("/lessons", async function(req, res, next){
@@ -71,39 +67,39 @@ exports.coursepage = async(req, res) => {
 
 exports.classroom = (req, res) => {
     let pagename = "classroom";
-    let username = req.user.name
-    let userEmail = req.user.email
-    res.render("classroom", {pagename, isLoggedIn:req.isAuthenticated(), username, userEmail})
+    
+    const authenticated = req.isAuthenticated();
+
+    res.render("classroom", {pagename, authenticated,})
 }
 
 exports.topic = (req, res) => {
     let pagename = "topic";
-    let username = req.user.name
-    let userEmail = req.user.email
-    res.render("CMS/topic", {pagename, isLoggedIn:req.isAuthenticated(), username, userEmail})
+    const authenticated = req.isAuthenticated();
+   
+    res.render("CMS/topic", {pagename, authenticated})
 }
 
 exports.contact = (req, res) => {
     let pagename = "contact";
-    let username = req.user.name
-    let userEmail = req.user.email
-    res.render("contact", {pagename, user: req.user , isLoggedIn:req.isAuthenticated(), username, userEmail})
-    console.log(req.isAuthenticated())
+    const authenticated = req.isAuthenticated();
+
+    res.render("contact", {pagename, user: req.user , authenticated})
 }
 
 
 exports.summary = (req, res) => {
     let pagename = "summary";
-    let username = req.user.name
-    let userEmail = req.user.email
-    res.render("summary", {pagename, isLoggedIn:req.isAuthenticated(), username, userEmail})
+    const authenticated = req.isAuthenticated();
+    
+    res.render("summary", {pagename, authenticated})
 }
 
 exports.coursepage = (req, res) => {
     let pagename = "coursepage";
-    let username = req.user.name
-    let userEmail = req.user.email
-    res.render("course", {pagename, isLoggedIn:req.isAuthenticated(), username, userEmail})
+    const authenticated = req.isAuthenticated();
+   
+    res.render("course", {pagename, authenticated})
 }
 
 
