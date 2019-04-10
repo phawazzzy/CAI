@@ -19,11 +19,60 @@
                                 </li>
                             </ul>
                             <div class="top_bar_login ml-auto">
-s
+
                                 <ul>
                                     <% if (isLoggedIn) { %>
-                                        <li><a href="/register"></a></li>
-                                        <li><a href="/logout">Logout</a></li>
+                                        <div class="account-wrap">
+                                            <div class="account-item clearfix js-item-menu">
+                                                <div class="image">
+                                                    <img src="images/icon/avatar.jpg" alt="John Doe" />
+                                                </div>
+                                                <div class="content">
+                                                    <a class="js-acc-btn" href="#" style="color:#918EA0;">
+                                                        <%- username%>
+                                                    </a>
+                                                </div>
+                                                <div class="account-dropdown js-dropdown">
+                                                    <div class="info clearfix">
+                                                        <div class="image">
+                                                            <a href="#">
+                                                                <img src="images/icon/avatar.jpg" alt="<%- username %>" />
+                                                            </a>
+                                                        </div>
+                    
+                    
+                    
+                                                        <div class="content">
+                                                            <h5 class="name">
+                                                                <a href="#">
+                                                                    <%- username%>
+                                                                </a>
+                                                            </h5>
+                                                            <span class="email"><%- userEmail%></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="account-dropdown__body">
+                                                        <div class="account-dropdown__item">
+                                                            <a href="#">
+                                                                <i class="zmdi zmdi-account"></i>Account</a>
+                                                        </div>
+                                                        <div class="account-dropdown__item">
+                                                            <a href="#">
+                                                                <i class="zmdi zmdi-settings"></i>Setting</a>
+                                                        </div>
+                                                        <div class="account-dropdown__item">
+                                                            <a href="#">
+                                                                <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="account-dropdown__footer">
+                                                        <a href="/logout">
+                                                            <i class="zmdi zmdi-power"></i>Logout</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                           
                                     <%}else{ %>
                                         <li><a href="/register">Register</a></li>
                                         <li><a href="/login">Login</a></li>
@@ -139,3 +188,5 @@ s
         </div>
     </div>
 </div>
+
+<%- include('../partials/cmsScript.ejs') %>
