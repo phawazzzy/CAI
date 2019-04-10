@@ -1,13 +1,14 @@
 var user = require('../models/user');
 let courses = require('../models/courses')
 
-exports.homepage = async (req, res) => {
+exports.homepage = async(req, res) => {
     let free = "";
     let featured = "";
     free = await courses.find({type: "free"});
     featured = await courses.findOne({type: "featured"});
     let pagename = "home";
     const authenticated = req.isAuthenticated();
+    console.log(authenticated)
     res.render("index", {free, featured, pagename, authenticated,})
 };
 
@@ -50,19 +51,24 @@ exports.coursepage = async(req, res) => {
     res.render("course", { result, authenticated, authenticated })
 }
 
-// router.get("/lessons", async function(req, res, next){
-//     let result = ""
-//    result = await Lecture.find({})
-//     res.render("lessons", {result})
-//   })
+exports.test = async(req, res, next) => {
+    let doc = ""
+    docx = await test.find({})
+    let pagename = "test";
 
-// router.get("/lessons/:id", async function(req, res, next){
+    res.render("tests", { doc, pagename })
+
+}
+
+// exports.coursepage = async(req, res) => {
 //     let idd = req.params.id;
 //     let result = "";
 
-//     result = await Lecture.findOne({link: idd});  
-//     res.render("template", {result})        
-// })
+//     result = await courses.findOne({ _id: idd });
+//     res.render("course", { result })
+// }
+
+
 
 
 exports.classroom = (req, res) => {
@@ -89,6 +95,7 @@ exports.contact = (req, res) => {
 
 
 exports.summary = (req, res) => {
+
     let pagename = "summary";
     const authenticated = req.isAuthenticated();
     

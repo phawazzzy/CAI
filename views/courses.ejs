@@ -133,9 +133,18 @@
                                                 <div class="course_price ml-auto"><span>
                                                         <%= doc[i].duration %>
                                                     </span></div>
+
+                                            <div class="course_header d-flex flex-row align-items-center justify-content-start">
+                                                <div class="course_tag">
+                                                    <a href="#">
+                                                        <%-doc[i].type%>
+                                                    </a>
+                                                </div>
+                                                <div class="course_price ml-auto"><span><%-doc[i].type%></span></div>
+
                                             </div>
                                             <div class="course_title">
-                                                <h3><a href="courses.html"></a>
+                                                <h3><a href="/courses/<%-doc[i]._id %>">
                                                     <%= doc[i].topic_title %>
                                                     </a></h3>
                                             </div>

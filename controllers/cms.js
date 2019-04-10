@@ -21,7 +21,9 @@ exports.admin_register = (req, res) => {
 }
 
 exports.admin_login = (req, res) => {
-    res.render("CMS/login", {})
+    let loginError = req.flash('loginError');
+    let passwordError = req.flash('passwordError')
+    res.render("CMS/login", { loginError, passwordError })
 }
 
 

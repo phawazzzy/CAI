@@ -44,7 +44,9 @@ html {
     padding-right: 150px;
     padding-bottom: 50px;
     padding-left: 150px;
-    background-color: #fff;
+    padding-top: 80px;
+    /* background-color: ; */
+    background: url('/images/leaves.png')
 }
 
 a {
@@ -177,8 +179,6 @@ img {
     width: auto;
     height: 432px;
     margin-top: 70px;
-    /* background-image: url("https://uploads-ssl.webflow.com/5ca1762ab7e3ed999e21008c/5ca711bb3977267b61f0865d_heropage.jpg"); */
-    /* background-image: url("<%- result.image%>"); */
     background-position: 0px 0px;
     background-size: cover;
 }

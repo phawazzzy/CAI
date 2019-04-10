@@ -12,10 +12,10 @@
                                     <div class="question">Have any questions?</div>
                                 </li>
                                 <li>
-                                    <a href="number:07010856952">07010856952</a>
+                                    <div><a href="tel: 07010856952">07010856952</a></div>
                                 </li>
                                 <li>
-                                    <a href="mailto:info@lasucai.com">info@lasucai.com</a>
+                                    <div><a href="info@lasucai.com">info@lasucai.com</a></div>
                                 </li>
                             </ul>
                             <div class="top_bar_login ml-auto">
@@ -23,13 +23,11 @@
                                 <ul>
                                     <% if (authenticated) { %>
                                         <a href="/logout" style="color:#918EA0">
-                                            <i class="zmdi zmdi-power"></i> Logout</a>
-                                        
-                           
-                                    <%}else{ %>
+                                            <i class="zmdi zmdi-power"></i> Logout</a>                     
+                                <%}else{ %>
                                         <li><a href="/register">Register</a></li>
                                         <li><a href="/login">Login</a></li>
-                                    <%}%>
+                                            <%}%>
                                 </ul>
                             </div>
                         </div>
@@ -58,48 +56,45 @@
                             <ul class="main_nav">
 
                                 <li class=" <%= (pagename == 'home') ? 'active' : '' %>"> <a href="/">home</a></li>
-                                    <li class=" <%= (pagename == 'about' ) ? 'active' : '' %>"><a href="/about">about
+                                <li class=" <%= (pagename == 'about' ) ? 'active' : '' %>"><a href="/about">about
                                             us</a>
-                                    </li>
-                                    <li class=" <%= (pagename == 'courses') ? 'active' : '' %>"><a
-                                            href="/courses">courses</a></li>
+                                </li>
+                                <li class=" <%= (pagename == 'courses') ? 'active' : '' %>"><a href="/courses">courses</a></li>
 
-                                    <li class=" <%= (pagename == 'contact') ? 'active' : '' %>"><a
-                                            href="/contact">contact</a></li>
-                                </ul>
-                                <div class="search_button"><i class="fa fa-search" aria-hidden="true"></i></div>
+                                <li class=" <%= (pagename == 'contact') ? 'active' : '' %>"><a href="/contact">contact</a></li>
+                            </ul>
+                            <div class="search_button"><i class="fa fa-search" aria-hidden="true"></i></div>
 
-                                <!-- Hamburger -->
+                            <!-- Hamburger -->
 
-                                <div class="hamburger menu_mm">
-                                    <i class="fa fa-bars menu_mm" aria-hidden="true"></i>
-                                </div>
-                                </nav>
-
+                            <div class="hamburger menu_mm">
+                                <i class="fa fa-bars menu_mm" aria-hidden="true"></i>
                             </div>
-                        </div>
+                        </nav>
+
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <!-- Header Search Panel -->
-            <div class="header_search_container">
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <div class="header_search_content d-flex flex-row align-items-center justify-content-end">
-                                <form action="#" class="header_search_form">
-                                    <input type="search" class="search_input" placeholder="Search" required="required">
-                                    <button
-                                        class="header_search_button d-flex flex-column align-items-center justify-content-center">
+    <!-- Header Search Panel -->
+    <div class="header_search_container">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="header_search_content d-flex flex-row align-items-center justify-content-end">
+                        <form action="#" class="header_search_form">
+                            <input type="search" class="search_input" placeholder="Search" required="required">
+                            <button class="header_search_button d-flex flex-column align-items-center justify-content-center">
                                         <i class="fa fa-search" aria-hidden="true"></i>
                                     </button>
-                                </form>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 </header>
 
 <!-- Menu -->

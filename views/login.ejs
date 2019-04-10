@@ -38,8 +38,8 @@
                                 <input name="Password" class="text-field-3 w-input" type="password" placeholder="Password">
                                 <input class="submit-button w-button" type="submit" value="SIGN IN">
                             </form> -->
-                                <span><%= loginError%></span>
-                                <span><%= passwordError%></span>
+                                <span><%#= loginError%></span>
+                                <span><%#= passwordError%></span>
                                 <form action="/login/student" method="POST">
                                     <input id="first-name" class="text-field-2 w-input" type="text" name="email" placeholder="Email">
                                     <input id="first-name" class="text-field-3 w-input" type="password" name="password" placeholder="password">
@@ -60,6 +60,22 @@
                 </div>
             </div>
         </div>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+        <script>
+            if ('<%= loginError%>') {
+                swal({
+                    text: '<%= loginError%>',
+                })
+
+            }
+            if ('<%= passwordError%>') {
+                swal({
+                    text: '<%= passwordError%>',
+                })
+
+            }
+        </script>
 
     </body>
 

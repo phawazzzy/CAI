@@ -37,7 +37,17 @@
                                             <div class="form-group row">
                                                 <label for="topic title" class="col-sm-2 col-form-label">topic title</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="" name="topic_title" placeholder="topic title" value="">
+                                                    <!-- <input type="text" class="form-control" id="" name="topic_title" placeholder="topic title" value=""> -->
+                                                    <select class="custom-select" name="topic_title">
+                                                        
+                                                            <option selected>select test topic</option>
+                                                 <% for(let i=0; i < test.length; i++) { %>
+
+                                                            <option value="<%= test[i].topic_title%>" ><%= test[i].topic_title%></option>
+                                                            <!-- <option value="2">Two</option>
+                                                            <option value="3">Three</option> -->
+                                                    <%}%>  
+                                                          </select>
                                                 </div>
                                             </div>
                                             <!-- END OF INPUT FOR TOPIC TITLE -->
@@ -141,7 +151,7 @@
                 <!-- SCRIPT -->
                 <%- include('../partials/cmsScript.ejs') %>
                     <!-- END OF SCRIPT -->
-                    <script>
+                    <!-- <script>
                         CKEDITOR.replace("question", {
                             toolbar: [{
                                     name: 'basic',
@@ -151,7 +161,7 @@
                             ],
                             height: 200
                         });
-                    </script>
+                    </script> -->
     </div>
 </body>
 

@@ -45,11 +45,25 @@
 					%>
                 </form>
 
-                <div class="login100-more" style="background-image: url('/img/africa.jpg');"></div>
+                <div class="login100-more" style="background-image: url('images/molecule.png');"></div>
             </div>
         </div>
     </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        if ('<%=loginError%>') {
+            swal({
+                text: '<%=loginError%>',
+            })
 
+        }
+        if ('<%= passwordError%>') {
+            swal({
+                text: '<%= passwordError%>',
+            })
+
+        }
+    </script>
 
 </body>
 

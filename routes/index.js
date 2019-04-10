@@ -21,6 +21,9 @@ var user = require('../models/user');
 
 /* GET home page. */
 router.get('/', controller.homepage);
+// router.get('/', (req, res, next) => {
+//     res.render('index')
+// })
 router.get('/login', controller.login);
 router.get('/register', controller.register);
 router.get('/admin_register', cms_controller.admin_register);
@@ -34,16 +37,10 @@ router.get('/classroom', controller.classroom);
 router.get("/dashboard", adminLoggedIn, cms_controller.dashboard);
 router.get('/summary', controller.summary)
     // router.get('/course/:id', controller.coursepage)
-    // router.get("/taketest", isLoggedIn, controller.takeTest)
+router.get("/test", isLoggedIn, controller.test)
 
 
-// take test route
-router.get('/tests/historyofcomputers', function(req, res, next) {
-    test.find({}).then(function(result) {
-        console.log(result)
-        res.render("taketest", { result });
-    })
-})
+
 
 
 // HANDLE IMAGES
@@ -168,12 +165,17 @@ router.route("/add_topic")
 
 router.route("/add_test")
     .all(adminLoggedIn)
-    .get(function(req, res) {
+    .get(async function(req, res) {
+
         try {
-            // let admin = user.find({ role: "admin" })
+            let test = ""
+            test = await courses.find({})
+
+
             let username = req.user.name
             let userEmail = req.user.email
-            res.render("CMS/add_test", { username, userEmail })
+            console.log(test)
+            res.render("CMS/add_test", { username, userEmail, test })
         } catch (err) {
             showError(req, "GET", "add_test", err);
             res.redirect("/dashboard");
@@ -205,11 +207,11 @@ router.route("/add_test")
 
 // one page render for the courses
 
-router.get("/lessons", async function(req, res, next) {
-    let result = ""
-    result = await Lecture.find({})
-    res.render("lessons", { result })
-})
+// router.get("/lessons", async function(req, res, next) {
+//     let result = ""
+//     result = await Lecture.find({})
+//     res.render("lessons", { result })
+// })
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
@@ -220,7 +222,7 @@ function isLoggedIn(req, res, next) {
 }
 
 function adminLoggedIn(req, res, next) {
-    if (req.isAuthenticated()) {
+    if (req.isAuthenticated() && req.user.role == "admin") {
         return next()
     }
 
@@ -240,13 +242,50 @@ router.get("/adminLogout", function(req, res) {
 
 router.get("/courses/:id", async function(req, res, next) {
     idd = req.params.id;
+    iddd = req.params.id;
 
     let result = "";
+    let quiz = ""
     result = await courses.findOne({ _id: idd })
-    res.render("course", { result })
+    let title = result.topic_title;
+    quiz = await test.find({ topic_title: title })
+    console.log(quiz)
+    let pagename = "courses";
+
+    res.render("course", { result, quiz, pagename })
 })
 
 
+
+// tests route
+
+router.get("/test/:id", async function(req, res, next) {
+    idd = req.params.id;
+    iddd = req.params.id;
+
+    let result = "";
+    let quiz = ""
+    quiz = await test.findOne({ _id: idd })
+        // let title = result.topic_title;
+        // quiz = await test.find({ topic_title: title })
+    console.log(quiz)
+    let pagename = "test";
+
+    res.render("taketest", { result, quiz, pagename })
+})
+
+
+
+
+
+
+// take test route
+router.get('/tests/historyofcomputers', function(req, res, next) {
+    test.find({}).then(function(result) {
+        console.log(result)
+        res.render("taketest", { result });
+    })
+})
 
 
 
