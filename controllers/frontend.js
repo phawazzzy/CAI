@@ -7,10 +7,12 @@ exports.homepage = async (req, res) => {
     free = await courses.find({type: "free"});
     featured = await courses.findOne({type: "featured"});
 
+    let username = req.user.name
+    let userEmail = req.user.email
     let pagename = "home";
 
     console.log(free)
-    res.render("index", {free, featured, pagename, isLoggedIn:req.isAuthenticated()})
+    res.render("index", {free, featured, pagename, isLoggedIn:req.isAuthenticated(), username, userEmail})
 };
 
 
@@ -27,7 +29,9 @@ exports.register = (req, res) => {
 }
 exports.about = (req, res) => {
     let pagename = "about";
-    res.render("about", {pagename, isLoggedIn:req.isAuthenticated()});
+    let username = req.user.name
+    let userEmail = req.user.email
+    res.render("about", {pagename, isLoggedIn:req.isAuthenticated(), username, userEmail});
     
 };
 
@@ -36,15 +40,18 @@ exports.courses = async(req, res, next) => {
     let doc = ""
     doc = await courses.find({})
     pagename = courses;
-    res.render("courses", { doc, pagename, isLoggedIn:req.isAuthenticated() })
+    let username = req.user.name
+    let userEmail = req.user.email
+    res.render("courses", { doc, pagename, isLoggedIn:req.isAuthenticated(), username, userEmail })
 }
 
 exports.coursepage = async(req, res) => {
     let idd = req.params.id;
     let result = "";
-
+    let username = req.user.name
+    let userEmail = req.user.email
     result = await courses.findOne({ _id: idd });
-    res.render("course", { result })
+    res.render("course", { result, username, userEmail })
 }
 
 // router.get("/lessons", async function(req, res, next){
@@ -64,29 +71,39 @@ exports.coursepage = async(req, res) => {
 
 exports.classroom = (req, res) => {
     let pagename = "classroom";
-    res.render("classroom", {pagename, isLoggedIn:req.isAuthenticated()})
+    let username = req.user.name
+    let userEmail = req.user.email
+    res.render("classroom", {pagename, isLoggedIn:req.isAuthenticated(), username, userEmail})
 }
 
 exports.topic = (req, res) => {
     let pagename = "topic";
-    res.render("CMS/topic", {pagename, isLoggedIn:req.isAuthenticated()})
+    let username = req.user.name
+    let userEmail = req.user.email
+    res.render("CMS/topic", {pagename, isLoggedIn:req.isAuthenticated(), username, userEmail})
 }
 
 exports.contact = (req, res) => {
     let pagename = "contact";
-    res.render("contact", {pagename, user: req.user , isLoggedIn:req.isAuthenticated()})
+    let username = req.user.name
+    let userEmail = req.user.email
+    res.render("contact", {pagename, user: req.user , isLoggedIn:req.isAuthenticated(), username, userEmail})
     console.log(req.isAuthenticated())
 }
 
 
 exports.summary = (req, res) => {
     let pagename = "summary";
-    res.render("summary", {pagename, isLoggedIn:req.isAuthenticated()})
+    let username = req.user.name
+    let userEmail = req.user.email
+    res.render("summary", {pagename, isLoggedIn:req.isAuthenticated(), username, userEmail})
 }
 
 exports.coursepage = (req, res) => {
     let pagename = "coursepage";
-    res.render("course", {pagename, isLoggedIn:req.isAuthenticated()})
+    let username = req.user.name
+    let userEmail = req.user.email
+    res.render("course", {pagename, isLoggedIn:req.isAuthenticated(), username, userEmail})
 }
 
 
