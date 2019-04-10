@@ -36,7 +36,7 @@ exports.about = (req, res) => {
 exports.courses = async(req, res, next) => {
     let doc = ""
     doc = await courses.find({})
-    pagename =" courses";
+    let pagename ="courses";
     const authenticated = req.isAuthenticated();
     
     res.render("courses", { doc, pagename,authenticated})
@@ -47,8 +47,9 @@ exports.coursepage = async(req, res) => {
     let result = "";
     result = await courses.findOne({ _id: idd });
     const authenticated = req.isAuthenticated();
+    let pagename ="coursepage"
 
-    res.render("course", { result, authenticated, authenticated })
+    res.render("course", { result, authenticated,pagename })
 }
 
 exports.test = async(req, res, next) => {

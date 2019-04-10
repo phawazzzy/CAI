@@ -13,12 +13,6 @@
     <link rel="stylesheet" type="text/css" href="styles/courses.css">
     <link rel="stylesheet" type="text/css" href="styles/courses_responsive.css">
     <link rel="shortcut icon" href="images/molecule.png" type="image/png">
-    <link href="css/theme.css" rel="stylesheet" media="all">
-    <link href="css/theme.css" rel="stylesheet" media="all">
-    <link href="css/font-face.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
 </head>
 
 <body>
@@ -37,13 +31,13 @@
                         <div class="row">
                             <div class="col">
                                 <div class="home_content text-center">
-                                    <div class="home_title">COURSES</div>
-                                    <div class="breadcrumbs">
-                                        <ul>
-                                            <li><a href="index.html">Home</a></li>
-                                            <li>Courses</li>
-                                        </ul>
-                                    </div>
+                                    <div class="home_title">Courses</div>
+                                    <!-- <div class="breadcrumbs">
+                                    <ul>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li>About us</li>
+                                    </ul>
+                                </div> -->
                                 </div>
                             </div>
                         </div>
@@ -112,8 +106,6 @@
                         </div>
                     </div>
 
-
-                        <!-- Course -->
                     <!-- All Courses -->
                     <div class="courses_row">
                         <span>All Courses</span>
@@ -125,42 +117,30 @@
 
                                 <div class="col-lg-4 col-md-6">
                                     <div class="course">
-                                        <div class="course_image">
-                                            <img src="<%= doc[i].image %>"
-                                                 height="350px"> </div>
+                                        <div class="course_image"><img src="<%- doc[i].image %>" alt=""></div>
                                         <div class="course_body">
-                                            <div
-                                                class="course_header d-flex flex-row align-items-center justify-content-start">
-                                                <div class="course_tag"><a href="#"><%= doc[i].category %></a></div>
-                                                <div class="course_price ml-auto"><span>
-                                                        <%= doc[i].duration %>
-                                                    </span></div>
-
                                             <div class="course_header d-flex flex-row align-items-center justify-content-start">
                                                 <div class="course_tag">
                                                     <a href="#">
                                                         <%-doc[i].type%>
                                                     </a>
                                                 </div>
-                                                <div class="course_price ml-auto"><span><%-doc[i].type%></span></div>
-
+                                                <div class="course_price ml-auto">Price: <span><%-doc[i].type%></span></div>
                                             </div>
                                             <div class="course_title">
-                                                <h3><a href="/courses/<%-doc[i]._id %>">
-                                                    <%= doc[i].topic_title %>
-                                                    </a></h3>
+                                                <h3>
+                                                    <a href="/courses/<%-doc[i]._id%>">
+                                                        <%-doc[i].topic_title%>
+                                                    </a>
+                                                </h3>
                                             </div>
                                             <div class="course_text">
-                                                <p>
-                                                    <%= doc[i].summary %>
-                                                </p>
+                                                <%-doc[i].summary%>
                                             </div>
                                             <div class="course_footer d-flex align-items-center justify-content-start">
-                                                <!-- <div class="course_author_image"><img src="images/featured_author.jpg"
-                                                                    alt="https://unsplash.com/@anthonytran"></div> -->
-                                                <div class="course_author_name bold">By <a
-                                                        href="#"><%= doc[i].author %></a></div>
-                                                <div class="course_sales ml-auto"><%= doc[i].type %></div>
+                                                <div class="course_author_image"><img src="images/featured_author.jpg" alt="https://unsplash.com/@anthonytran"></div>
+                                                <div class="course_author_name">By <a href="#">James S. Morrison</a></div>
+                                                <div class="course_sales ml-auto"><span>352</span> Sales</div>
                                             </div>
                                         </div>
                                     </div>
