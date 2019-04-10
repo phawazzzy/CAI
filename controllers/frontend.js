@@ -1,5 +1,8 @@
 var user = require('../models/user');
 let courses = require('../models/courses')
+var test = require("../models/test")
+
+
 
 
 
@@ -46,6 +49,15 @@ exports.courses = async(req, res, next) => {
     let pagename = "courses";
 
     res.render("courses", { doc, pagename })
+
+}
+
+exports.test = async(req, res, next) => {
+    let doc = ""
+    docx = await test.find({})
+    let pagename = "test";
+
+    res.render("tests", { doc, pagename })
 
 }
 

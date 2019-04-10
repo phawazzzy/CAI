@@ -37,7 +37,7 @@ router.get('/classroom', controller.classroom);
 router.get("/dashboard", adminLoggedIn, cms_controller.dashboard);
 router.get('/summary', controller.summary)
     // router.get('/course/:id', controller.coursepage)
-    // router.get("/taketest", isLoggedIn, controller.takeTest)
+router.get("/test", isLoggedIn, controller.test)
 
 
 
@@ -254,6 +254,30 @@ router.get("/courses/:id", async function(req, res, next) {
 
     res.render("course", { result, quiz, pagename })
 })
+
+
+
+// tests route
+
+router.get("/test/:id", async function(req, res, next) {
+    idd = req.params.id;
+    iddd = req.params.id;
+
+    let result = "";
+    let quiz = ""
+    quiz = await test.findOne({ _id: idd })
+        // let title = result.topic_title;
+        // quiz = await test.find({ topic_title: title })
+    console.log(quiz)
+    let pagename = "test";
+
+    res.render("taketest", { result, quiz, pagename })
+})
+
+
+
+
+
 
 // take test route
 router.get('/tests/historyofcomputers', function(req, res, next) {
