@@ -7,11 +7,15 @@ var multer = require('multer');
 const async = require("async");
 var courses = require("../models/courses")
 var test = require("../models/test")
+const fs = require('fs');
+let result = require("../models/result")
+
 
 const cloudinary = require("cloudinary");
 const cloudinaryStorage = require("multer-storage-cloudinary");
 const path = require("path")
 let showError = require("../config/errorHandler");
+
 
 
 
@@ -257,13 +261,203 @@ router.get("/courses/:id", async function(req, res, next) {
 
 // take test route
 router.get('/tests/historyofcomputers', function(req, res, next) {
-    test.find({}).then(function(result) {
-        console.log(result)
-        res.render("taketest", { result });
+        test.find({}).then(function(result) {
+            console.log(result)
+            res.render("taketest", { result });
+        })
     })
+    // 
+
+// test section
+router.get("/newTest", isLoggedIn, (req, res, next) => {
+    let studentname = req.user.name;
+    var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8', (err, data) => {
+        if (err) throw err;
+    });
+    var jsonContent = JSON.parse(readQuiz);
+    var titles = [];
+    for (var i = 0; i < jsonContent.length; i++) {
+        titles[i] = jsonContent[i]["title"];
+    }
+    res.render("newTest", { titles: titles, studentname })
+
+})
+router.post("/dashboard/testresult/post", function(req, res, next) {
+    let resultData = {
+        name: req.body.username,
+        score: req.body.userscore,
+        topic: req.body.topic
+    };
+
+    result.create(resultData).then((result) => {
+        console.log(result)
+        res.redirect('/')
+    });
+
 })
 
 
+
+router.get("/add_new_test", (req, res, next) => {
+    let username = req.user.name;
+    var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
+    var jsonContent = JSON.parse(readQuiz);
+    var titles = [];
+    for (var i = 0; i < jsonContent.length; i++) {
+        titles[i] = jsonContent[i]["title"];
+    }
+    res.render("CMS/addNewTest", { titles: titles })
+
+})
+
+router.get('/,/quiz', function(req, res) {
+    var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
+    var jsonContent = JSON.parse(readQuiz);
+    var titles = [];
+    for (var i = 0; i < jsonContent.length; i++) {
+        titles[i] = jsonContent[i]["title"];
+    }
+    res.send(JSON.stringify(titles));
+});
+
+router.post('/quiz', function(req, res) {
+    var sentQuiz = req.body;
+    var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
+    var jsonContent = JSON.parse(readQuiz);
+    if (jsonContent.length > 0) {
+        sentQuiz["id"] = jsonContent[jsonContent.length - 1]["id"] + 1;
+    }
+    jsonContent.push(sentQuiz);
+
+    var jsonString = JSON.stringify(jsonContent);
+    fs.writeFileSync("data/allQuizzes.json", jsonString, (err) => {
+        if (err) {
+            console.log(err)
+            alert("cant post quiz")
+        } else {
+            let success = req.flash("success", "new quiz has been posted")
+            alert("posted quiz")
+
+            // swal({
+            //     title: "success",
+            //     text: "new quiz has been succesfully created",
+            //     icon: "success"
+            // })
+
+            res.send("created", { success });
+        }
+    });
+
+
+});
+
+router.get('/quiz/:id', function(req, res) {
+    var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
+    var jsonContent = JSON.parse(readQuiz);
+    var targetQuiz;;
+    for (var i = 0; i < jsonContent.length; i++) {
+        if (jsonContent[i]["id"] === parseInt(req.params.id)) {
+            targetQuiz = jsonContent[i];
+            break;
+        }
+    }
+    res.send(targetQuiz);
+});
+
+router.put('/quiz/:id', function(req, res) {
+    var sentQuiz = req.body;
+    var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
+    var jsonContent = JSON.parse(readQuiz);
+    for (var i = 0; i < jsonContent.length; i++) {
+        if (jsonContent[i]["id"] === parseInt(req.params.id)) {
+            jsonContent[i] = sentQuiz;
+            break;
+        }
+    }
+
+    var jsonString = JSON.stringify(jsonContent);
+    fs.writeFile("data/allQuizzes.json", jsonString, (err) => {
+        if (err) {
+            console.log(err)
+            alert("cant post quiz")
+        } else {
+            res.send("updated");
+        }
+
+    });
+
+
+});
+
+router.delete('/quiz/:id', function(req, res) {
+    var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
+    var jsonContent = JSON.parse(readQuiz);
+    for (var i = 0; i < jsonContent.length; i++) {
+        if (jsonContent[i]["id"] === parseInt(req.params.id)) {
+            jsonContent.splice(i, 1);
+            break;
+        }
+    }
+    var jsonString = JSON.stringify(jsonContent);
+    fs.writeFile("data/allQuizzes.json", jsonString, (err) => {
+        if (err) {
+            console.log(err)
+            alert("cant delete quiz")
+        } else {
+            res.send("deleted");
+        }
+    });
+});
+
+router.get('/reset', function(req, res) {
+    var readIn = fs.readFileSync("data/defaultallquizzes.json", 'utf8');
+    // var readInAdded = fs.readFileSync("data/allQuizzes.json", 'utf8');
+    // fs.writeFile("data/allQuizzesRevert.json", readInAdded);
+    fs.writeFile("data/allQuizzes.json", readIn);
+    res.send("default quizzes restored");
+});
+
+router.get('/revert', function(req, res) {
+    var readIn = fs.readFileSync("data/allQuizzesRevert.json", 'utf8');
+    fs.writeFile("data/allQuizzes.json", readIn);
+    res.send("reverted");
+});
+
+router.get('/users', function(req, res) {
+    var readUsers = fs.readFileSync("data/users.json", 'utf8');
+    res.send(readUsers);
+});
+
+router.post('/users', function(req, res) {
+    var jsonString = JSON.stringify(req.body);
+    fs.writeFile("data/users.json", jsonString);
+    res.send(req.body);
+});
+
+router.get('/titles', function(req, res) {
+    var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
+    var jsonContent = JSON.parse(readQuiz);
+    var titles = "[";
+    for (var i = 0; i < jsonContent.length; i++) {
+        if (i < jsonContent.length - 1)
+            titles += "\"" + jsonContent[i]["title"] + "\"" + ", ";
+        else
+            titles += "\"" + jsonContent[i]["title"] + "\"";
+    }
+    titles += "]";
+    res.send(titles);
+});
+
+router.get('/titlesandids', function(req, res) {
+    var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
+    var jsonContent = JSON.parse(readQuiz);
+    var titles = [];
+    for (var i = 0; i < jsonContent.length; i++) {
+        titles[i] = jsonContent[i]["title"];
+        titles[jsonContent.length + i] = jsonContent[i]["id"];
+    }
+    res.send(JSON.stringify(titles));
+});
 
 
 module.exports = router;

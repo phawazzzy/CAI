@@ -27,7 +27,8 @@
     "multer-storage-cloudinary": "^2.2.1",
     "nodemon": "^1.18.10",
     "passport": "^0.4.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "sweetalert": "^2.1.2"
   },
   "description": " A computer Assited Instruction for teaching computer students at the secondary level",
   "main": "app.js",
