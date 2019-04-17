@@ -251,8 +251,9 @@ router.get("/courses/:id", async function(req, res, next) {
     quiz = await test.find({ topic_title: title })
     console.log(quiz)
     let pagename = "courses";
+    const authenticated = req.isAuthenticated();
 
-    res.render("course", { result, quiz, pagename })
+    res.render("course", { result, quiz, pagename, authenticated })
 })
 
 

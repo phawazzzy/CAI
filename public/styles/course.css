@@ -46,7 +46,7 @@ html {
     padding-left: 150px;
     padding-top: 80px;
     /* background-color: ; */
-    background: url('/images/leaves.png')
+   
 }
 
 a {
@@ -190,8 +190,8 @@ img {
 }
 
 .div-block-28 {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
     padding-top: 20px;
     padding-bottom: 10px;
     padding-left: 0px;
