@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>create topics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <%- include('../partials/cmsHead.ejs') %>
+
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+
+        <%- include('../partials/cmsHeader.ejs') %>
+            <%- include('../partials/sideNav.ejs') %>
+
+
+                <!-- MAIN CONTENT -->
+                <div class="main-content">
+                    <div class="section__content section__content--p30">
+                        <div class="container-fluid">
+                            <div class="container">
+                                <div class="row">
+                                    <!-- <div class="col-md-12"> -->
+                                    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-5 pb-2 mb-3">
+                                            <h1 class="h2 rw"><span class="text-info">TEST RESULT</span></h1>
+                                        </div>
+
+                                        <table class="table table-bordered table-hover">
+                                            <thead class="thead-dark" style="font-weight:bold">
+                                                <tr>
+                                                    <th scope="col">Names</th>
+                                                    <th scope="col">Scores</th>
+                                                    <th scope="col">Topic</th>
+
+
+                                                </tr>
+                                            </thead>
+                                            <tbody style="font-size:15px">
+                                                <% for(var i=0; i < test.length; i++) { %>
+                                                    <tr>
+                                                        <td><b><%= test[i].name%></b></td>
+                                                        <td><b><%= test[i].score %></b></td>
+                                                        <td><b><%= test[i].topic %></b></td>
+
+                                                    </tr>
+                                                    <% } %>
+                                            </tbody>
+                                        </table>
+
+
+
+                                    </main>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END OF MAIN CONTENT -->
+
+
+                </div>
+                <!-- SCRIPT -->
+                <%- include('../partials/cmsScript.ejs') %>
+                    <!-- END OF SCRIPT -->
+                    <!-- <script>
+                        CKEDITOR.replace("question", {
+                            toolbar: [{
+                                    name: 'basic',
+                                    items: ['Font', 'Format', 'FontSize', 'TextColor', 'BGColor', '-', 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'Copy', 'Cut', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Image', '-', 'NumberedList', 'BulletedList']
+                                },
+
+                            ],
+                            height: 200
+                        });
+                    </script> -->
+    </div>
+</body>
+
+</html>

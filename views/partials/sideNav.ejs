@@ -8,7 +8,7 @@
     <div class="menu-sidebar__content js-scrollbar1">
         <nav class="navbar-sidebar">
             <ul class="list-unstyled navbar__list">
-                <li class="active has-sub">
+                <li class=" <%= (pagename == 'dashboard') ? 'active' : '' %> has-sub">
                     <a class="js-arrow" href="/dashboard">
                         <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                     <!-- <ul class="list-unstyled navbar__sub-list js-sub-list">
@@ -26,19 +26,19 @@
                         </li>
                     </ul> -->
                 </li>
-                <li>
+                <li class="<%= (pagename == 'topic') ? 'active' : '' %>">
                     <a href="/topic">
                         <i class="fas fa-chart-bar"></i>Topics</a>
                 </li>
                 <li>
-                    <a href="/add_test">
+                    <a href="/add_new_test">
                         <i class="fas fa-table"></i>create questions</a>
-                    <!-- </li>
-                <li>
-                    <a href="form.html">
-                        <i class="far fa-check-square"></i>Forms</a>
                 </li>
-                <li>
+                <li class="<%= (pagename == 'result') ? 'active' : '' %>">
+                    <a href="/result">
+                        <i class="far fa-check-square"></i>test result</a>
+                </li>
+                <!--   <li>
                     <a href="#">
                         <i class="fas fa-calendar-alt"></i>Calendar</a>
                 </li>

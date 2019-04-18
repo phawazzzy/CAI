@@ -126,10 +126,11 @@ router.route("/add_topic")
     .all(adminLoggedIn)
     .get(function(req, res) {
         try {
+            let pagename = "topic"
 
             let username = req.user.name
             let userEmail = req.user.email
-            res.render("CMS/add_topic", { username, userEmail })
+            res.render("CMS/add_topic", { username, userEmail, pagename })
         } catch (err) {
             showError(req, "GET", "add_topic", err);
             res.redirect("/dashboard");
@@ -160,49 +161,50 @@ router.route("/add_topic")
         res.redirect("/topic");
     });
 
-// add test route
+// TEST RESULT ROUTE BEGINNING
 
-router.route("/add_test")
+router.route("/result")
     .all(adminLoggedIn)
     .get(async function(req, res) {
 
         try {
+            let pagename = "result"
             let test = ""
-            test = await courses.find({})
+            test = await result.find({})
 
 
             let username = req.user.name
             let userEmail = req.user.email
             console.log(test)
-            res.render("CMS/add_test", { username, userEmail, test })
+            res.render("CMS/testResult", { username, userEmail, test, pagename })
         } catch (err) {
             showError(req, "GET", "add_test", err);
             res.redirect("/dashboard");
         }
     })
-    .post(upload.single("image"), async function(req, res) {
-        let testData = {
-            topic_title: req.body.topic_title,
-            question: req.body.question,
-            choices: req.body.chioces,
-            correct: req.body.correct,
+    // .post(upload.single("image"), async function(req, res) {
+    //     let testData = {
+    //         topic_title: req.body.topic_title,
+    //         question: req.body.question,
+    //         choices: req.body.chioces,
+    //         correct: req.body.correct,
 
-        };
-        if (req.file) {
-            pageData.publicid = req.file.public_id;
-            // pageData.image = `uploads/${req.file.filename}`
-        }
+//     };
+//     if (req.file) {
+//         pageData.publicid = req.file.public_id;
+//         // pageData.image = `uploads/${req.file.filename}`
+//     }
 
-        try {
-            await test.create(testData);
-            console.log(testData)
-            req.flash("success", "test Creation Successful!");
-        } catch (err) {
-            showError(req, "POST", "/add_test", err);
-        }
+//     try {
+//         await test.create(testData);
+//         console.log(testData)
+//         req.flash("success", "test Creation Successful!");
+//     } catch (err) {
+//         showError(req, "POST", "testResult", err);
+//     }
 
-        res.redirect("/add_test");
-    });
+//     res.redirect("testResult");
+// });
 
 // one page render for the courses
 
@@ -212,6 +214,8 @@ router.route("/add_test")
 //     res.render("lessons", { result })
 // })
 
+
+// TEST OF TEST RESULT
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated() && req.user.role == "student") {
         return next()
@@ -263,19 +267,7 @@ router.get('/tests/historyofcomputers', function(req, res, next) {
 })
 
 
-// THE STUDENT TEST ROUTE
-router.get("/dashboard/testresult", function(req, res, next) {
-        let username = req.user.name
-        let userEmail = req.user.email
-        let pagename = "test";
 
-        // // let username = req.user.name;
-        // let result = "";
-        // Result = await result.find({});
-
-        res.render("CMS/result", { userEmail, username, pagename })
-    })
-    // 
 
 // test section
 router.get("/newTest", isLoggedIn, (req, res, next) => {
@@ -291,6 +283,9 @@ router.get("/newTest", isLoggedIn, (req, res, next) => {
     res.render("newTest", { titles: titles, studentname })
 
 })
+
+// posting student test result after taking test
+// 
 router.post("/dashboard/testresult/post", function(req, res, next) {
     let resultData = {
         name: req.body.username,
