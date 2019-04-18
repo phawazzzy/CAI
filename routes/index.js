@@ -15,12 +15,7 @@ const cloudinary = require("cloudinary");
 const cloudinaryStorage = require("multer-storage-cloudinary");
 const path = require("path")
 let showError = require("../config/errorHandler");
-
-
-
-
-
-var user = require('../models/user');
+let user = require('../models/user');
 
 
 /* GET home page. */
@@ -57,7 +52,7 @@ cloudinary.config({
 });
 const cloudStorage = cloudinaryStorage({
     cloudinary: cloudinary,
-    folder: "citse",
+    folder: "csip",
 });
 
 // folder storage
@@ -93,7 +88,7 @@ function checkFileType(type) {
     };
 }
 // Multer execute
-const upload = multer({ storage: storage, fileFilter: checkFileType("images") });
+const upload = multer({ storage: cloudStorage, fileFilter: checkFileType("images") });
 const uploadFile = multer({ storage: cloudStorage, fileFilter: checkFileType("pdf") });
 
 async function getOldImage(req, res, next) {
@@ -151,8 +146,8 @@ router.route("/add_topic")
             type: req.body.type,
         };
         if (req.file) {
-            pageData.image = `uploads/${req.file.filename}`
-                // pageData.publicid = req.file.public_id;
+            // pageData.image = `uploads/${req.file.filename}`
+            pageData.publicid = req.file.public_id;
         }
 
         try {
@@ -194,8 +189,8 @@ router.route("/add_test")
 
         };
         if (req.file) {
-            pageData.image = `uploads/${req.file.filename}`
-                // pageData.publicid = req.file.public_id;
+            pageData.publicid = req.file.public_id;
+            // pageData.image = `uploads/${req.file.filename}`
         }
 
         try {
@@ -218,7 +213,7 @@ router.route("/add_test")
 // })
 
 function isLoggedIn(req, res, next) {
-    if (req.isAuthenticated()) {
+    if (req.isAuthenticated() && req.user.role == "student") {
         return next()
     }
 
@@ -261,10 +256,24 @@ router.get("/courses/:id", async function(req, res, next) {
 
 // take test route
 router.get('/tests/historyofcomputers', function(req, res, next) {
-        test.find({}).then(function(result) {
-            console.log(result)
-            res.render("taketest", { result });
-        })
+    test.find({}).then(function(result) {
+        console.log(result)
+        res.render("taketest", { result });
+    })
+})
+
+
+// THE STUDENT TEST ROUTE
+router.get("/dashboard/testresult", function(req, res, next) {
+        let username = req.user.name
+        let userEmail = req.user.email
+        let pagename = "test";
+
+        // // let username = req.user.name;
+        // let result = "";
+        // Result = await result.find({});
+
+        res.render("CMS/result", { userEmail, username, pagename })
     })
     // 
 
