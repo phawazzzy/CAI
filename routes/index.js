@@ -147,12 +147,13 @@ router.route("/add_topic")
             type: req.body.type,
         };
         if (req.file) {
-            // pageData.image = `uploads/${req.file.filename}`
+            pageData.postImage = req.file.secure_url;
             pageData.publicid = req.file.public_id;
         }
 
         try {
             await courses.create(pageData);
+
             req.flash("success", "course Creation Successful!");
         } catch (err) {
             showError(req, "POST", "/add_topic", err);
