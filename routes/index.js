@@ -147,8 +147,8 @@ router.route("/add_topic")
             type: req.body.type,
         };
         if (req.file) {
-            pageData.postImage = req.file.secure_url;
-            pageData.publicid = req.file.public_id;
+            pageData.image = req.file.secure_url;
+            pageData.imageId = req.file.public_id;
         }
 
         try {
